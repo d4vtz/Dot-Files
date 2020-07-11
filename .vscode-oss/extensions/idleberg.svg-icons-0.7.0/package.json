@@ -1,0 +1,203 @@
+{
+	"name": "svg-icons",
+	"displayName": "SVG Icons",
+	"description": "Snippets for popular SVG icons, including Octicons, Evil Icons, Open Iconic, SmartIcons Glyphs, and Bytesize",
+	"version": "0.7.0",
+	"publisher": "idleberg",
+	"license": "MIT",
+	"author": {
+		"name": "Jan T. Sott",
+		"url": "http://github.com/idleberg"
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "vscode-linter",
+		"vscode:prepublish": "gulp"
+	},
+	"keywords": [
+		"svg icons",
+		"octicons",
+		"evil icons",
+		"glyphs"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/idleberg/vscode-svg-icons"
+	},
+	"homepage": "https://github.com/idleberg/vscode-svg-icons#readme",
+	"bugs": {
+		"url": "https://github.com/idleberg/vscode-svg-icons/issues"
+	},
+	"icon": "images/logo.png",
+	"galleryBanner": {
+		"color": "#bee7fa"
+	},
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "blade",
+				"path": "./snippets/html/bi.json"
+			},
+			{
+				"language": "blade",
+				"path": "./snippets/html/ei.json"
+			},
+			{
+				"language": "blade",
+				"path": "./snippets/feather.json"
+			},
+			{
+				"language": "blade",
+				"path": "./snippets/html/octicon.json"
+			},
+			{
+				"language": "blade",
+				"path": "./snippets/html/oi.json"
+			},
+			{
+				"language": "blade",
+				"path": "./snippets/html/se.json"
+			},
+			{
+				"language": "blade",
+				"path": "./snippets/html/si.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/html/bi.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/html/ei.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/feather.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/html/octicon.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/html/oi.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/html/se.json"
+			},
+			{
+				"language": "html",
+				"path": "./snippets/html/si.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/jsx/bi.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/jsx/ei.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/feather.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/jsx/octicon.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/jsx/oi.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/jsx/se.json"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/jsx/si.json"
+			},
+			{
+				"language": "svelte",
+				"path": "./snippets/html/bi.json"
+			},
+			{
+				"language": "svelte",
+				"path": "./snippets/html/ei.json"
+			},
+			{
+				"language": "svelte",
+				"path": "./snippets/feather.json"
+			},
+			{
+				"language": "svelte",
+				"path": "./snippets/html/octicon.json"
+			},
+			{
+				"language": "svelte",
+				"path": "./snippets/html/oi.json"
+			},
+			{
+				"language": "svelte",
+				"path": "./snippets/html/se.json"
+			},
+			{
+				"language": "svelte",
+				"path": "./snippets/html/si.json"
+			},
+			{
+				"language": "vue-html",
+				"path": "./snippets/html/bi.json"
+			},
+			{
+				"language": "vue-html",
+				"path": "./snippets/html/ei.json"
+			},
+			{
+				"language": "vue-html",
+				"path": "./snippets/feather.json"
+			},
+			{
+				"language": "vue-html",
+				"path": "./snippets/html/octicon.json"
+			},
+			{
+				"language": "vue-html",
+				"path": "./snippets/html/oi.json"
+			},
+			{
+				"language": "vue-html",
+				"path": "./snippets/html/se.json"
+			},
+			{
+				"language": "vue-html",
+				"path": "./snippets/html/si.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"gulp-raster": "^0.2.0",
+		"gulp-rename": "^2.0.0",
+		"husky": "^4.2.5",
+		"vscode": "^1.1.36",
+		"vscode-linter": "^0.3.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run test"
+		}
+	},
+	"__metadata": {
+		"id": "c711b8dd-0bea-449f-8e50-cbc91672da26",
+		"publisherId": "d142cf02-af52-4395-9363-148909445cb3",
+		"publisherDisplayName": "idleberg"
+	}
+}
