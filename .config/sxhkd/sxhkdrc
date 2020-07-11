@@ -1,0 +1,212 @@
+		#	Mi configuracion de sxhkd
+		#	CallmeDav
+		
+######################################################
+# #Atajos a los archivos de config de bspwm y sxhkd ##
+######################################################
+
+#Recargar config de sxhkd
+super + shift + r
+    	pkill -USR1 -x sxhkd && notify-send 'Recargada la configuración de sxhkd'
+
+#Recargar config de bspwm
+super + alt + r
+	bspc wm -r && notify-send 'Recargada la configuracion de bspwm'
+
+#########################################################
+######	     #Aplicaciones más usdas     ################
+#########################################################
+
+#Navegador
+alt + w
+        google-chrome-unstable
+
+#Terminal
+super + Return
+        termite
+
+#Editor de texto
+alt + g
+	code
+
+#Administrador de archivos
+alt + f
+        thunar
+
+#Configuración del volumen
+alt + v
+	pavucontrol
+
+#Abrir Network-Manager
+alt + n
+	nm-connection-editor
+
+#Menu de aplicaciones Rofi
+super + shift + Return
+	rofi -modi ssh,run,window,drun -sidebar-mode -show-icons -show drun
+
+#Lector de pdf
+alt + p
+    evince
+
+#Spotify
+alt + s
+    ~/.config/scripts/spotify
+
+#Ocultar Telegram
+alt + c
+    ~/.config/scripts/ocultar_ventana TelegramDesktop telegram-desktop
+    
+#Ocultar Spotify
+alt + shift + s
+    ~/.config/scripts/ocultar_ventana Spotify spotify
+
+#Cambiar el wallpaper y colores de la paleta
+alt + Home
+   ~/.config/scripts/set-wall.sh 
+
+#Menu para cerrar sesión, reiniciar, bloquear, apagar
+super + End
+   ~/.config/scripts/powermenu.sh
+
+#Portapapeles
+super + x
+    ~/.config/scripts/portapapeles.sh
+
+###############################################################
+###########	 Configuracion de las ventanas   ##############
+###############################################################
+
+#Cerrar ventanas
+super + q
+	bspc node -c
+
+#Ventana fullscreen
+super + shift + f
+	bspc desktop -l next
+
+#Estado de la ventana
+super + shift + {i,o,p}
+    	bspc node -t {tiled,floating,fullscreen}
+
+# Cambiar posicion de la ventana
+super + shift + {Left,Down,Up,Right}
+    	bspc node -s {west,south,north,east}
+
+# Moverse entre nodos
+alt + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+
+#Moverse entre Workspaces
+super + {Prior,Next}
+    	bspc desktop -f {prev,next}.local
+
+#Moverse entre Workspaces ocupados
+super + {Left,Right}
+  	bspc desktop -f {prev,next}.occupied.local
+
+
+#Cambiar al ultimo WorkSpaces
+super + Tab
+    	bspc desktop -f last
+
+#Enviar ventanas a diferentes WorkSpaces
+#super + {_,shift + }{1-9,0}
+#    bspc {desktop -f,node -d} '^{1-9,10}' --follow
+
+#Enviar ventanas a diferentes WorkSpaces
+super + {_,shift + }{h,w,c,p,m,v,t,s}
+    bspc {desktop -f,node -d} '^{1-8}' --follow
+
+
+# Cambiar el tamaño de las gaps 
+#super + alt + button{4,5}
+super + z + {Up,Down}
+    bspc config window_gap $(( $(bspc config window_gap) {-,+} 5 ))
+
+#Rotar las ventanas 90°
+alt + {Prior,Next}
+	bspc node @parent -R {-90,90}
+
+
+###############################################################
+########   Mover y cambiar de tamaño Ventanas   ###############
+###############################################################
+#Expand/contract a window by moving one of its side outward/inward
+super + z : {Left,Down,Up,Right}
+    STEP=20; SELECTION={4,3,2,1}; \
+    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
+    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
+
+
+
+# Expand/contract a window by moving one of its side outward/inward
+super + shift + z : {Left,Down,Up,Right}
+    STEP=20; SELECTION={1,2,3,4}; \
+    bspc node -z $(echo "left $STEP 0,bottom 0 -$STEP,top 0 $STEP,right -$STEP 0" | cut -d',' -f$SELECTION) || \
+    bspc node -z $(echo "right $STEP 0,top 0 -$STEP,bottom 0 $STEP,left -$STEP 0" | cut -d',' -f$SELECTION)
+
+
+
+
+#Expandir ventanas desde la derecha
+#super + alt + {Left,Down,Up,Right}
+#    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+#Expandir ventanas desde la izquierda
+#super + alt + ctrl + {Left,Down,Up,Right}
+#    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+#Mover ventanas flotantes
+ctrl + {Left,Down,Up,Right}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#Dirección de preselección 
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+#Radio de preselección
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+super + l
+    bspc node -n last.!automatic
+
+#Cancelación de preselección
+ctrl + Return
+	bspc node -p cancel
+
+# Rotar arbol de ventanas
+super + shift + {Prior,Next}
+    bspc node @/ -C {forward,backward}
+    
+#################################################################
+#############			Teclas multimedia		#################
+#################################################################
+
+#Subir Volumen
+XF86AudioRaiseVolume
+    ~/.config/scripts/volumen/volume.sh up
+
+#Bajar volumen
+XF86AudioLowerVolume
+    ~/.config/scripts/volumen/volume.sh down
+
+#Mute
+XF86AudioMute
+    ~/.config/scripts/volumen/volume.sh mute
+
+#Subir brillo
+#XF86MonBrightnessUp
+#	~/.config/scripts/brillo-up.sh
+
+#Bajar brillo
+#XF86MonBrightnessDown
+#	~/.config/scripts/brillo-down.sh
+
+#Captura de pantalla
+Print
+	~/.config/scripts/screen.sh & notify-send 'Tomada captura de pantalla'
+
+
