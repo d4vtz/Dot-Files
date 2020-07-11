@@ -123,17 +123,26 @@ script(){
 #""""""""""""""""""""""""""""""""""""""""""""""""
 
 enlace(){
+    DIR=$HOME/Dotfiles
     echo "Moviendo arcivo a Dotfiles"
-    mv $1 ~/Dotfiles/$1
+    mv $1 $DIR/$1
     echo "Creando enlace simbolico"
-	ln -s ~/Dotfiles/"$1" ~/$1
-    #echo "Añadiendo al repositorio"
-    #git add $1
+	ln -s $DIR/"$1" ~/$1
+    echo "Cambiando al directorio $DIR"
+    cd $DIR
+    echo "Añadiendo al repositorio"
+    git add $1
+    echo "Regresando al directorio principal"
+    cd
 }
 
     commit(){
+    echo "Cambiando al directorio $DIR"
+    cd $DIR
     echo "Agregando commit"
     git commit -m "$*"
+    echo "Regresando al directorio principal"
+    cd
 }
 
 
