@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/medicendav/.config'
+let g:netrw_dirhist_8='/home/medicendav'
+let g:netrw_dirhist_7='/home/medicendav/.config/bspwm'
+let g:netrw_dirhist_6='/home/medicendav/.config'
+let g:netrw_dirhist_5='/home/medicendav'
+let g:netrw_dirhist_4='/home/medicendav/Documentos/Python/metodos_numericos'
+let g:netrw_dirhist_3='/home/medicendav/Documentos/Python'
+let g:netrw_dirhist_2='/home/medicendav/Documentos'
+let g:netrw_dirhist_1='/home/medicendav'
+let g:netrw_dirhist_0='/home/medicendav/.config/bspwm'
