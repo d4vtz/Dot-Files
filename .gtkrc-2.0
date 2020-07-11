@@ -1,0 +1,18 @@
+# DO NOT EDIT! This file will be overwritten by LXAppearance.
+# Any customization should be done in ~/.gtkrc-2.0.mine instead.
+
+include "/home/medicendav/.gtkrc-2.0.mine"
+gtk-theme-name="tarde-de-olas"
+gtk-icon-theme-name="Tela-manjaro"
+gtk-font-name="Comfortaa 10"
+gtk-cursor-theme-name="capitaine-cursors-light"
+gtk-cursor-theme-size=0
+gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-toolbar-icon-size=GTK_ICON_SIZE_MENU
+gtk-button-images=0
+gtk-menu-images=0
+gtk-enable-event-sounds=1
+gtk-enable-input-feedback-sounds=1
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle="hintmedium"
