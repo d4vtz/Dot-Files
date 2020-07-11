@@ -1,0 +1,27 @@
+[options]
+    resize_grip = true
+    scroll_on_output = true
+    scroll_on_keystroke = true
+    audible_bell = true
+    visible_bell = true
+    mouse_autohide = true
+    allow_bold = true
+    dynamic_title = true
+    urgent_on_bell = true
+    clickable_url = true
+    font = Iosevka Nerd Font 9
+    scrollback_lines = 1000
+    search_wrap = true
+    #icon_name = terminal
+    #geometry = 640x480
+
+    # "system", "on" or "off"
+    cursor_blink = system
+
+    # "block", "underline" or "ibeam"
+    cursor_shape = ibeam
+
+    # $BROWSER is used by default
+    browser = firefox
+
+      
