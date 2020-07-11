@@ -123,10 +123,12 @@ script(){
 #""""""""""""""""""""""""""""""""""""""""""""""""
 
 enlace(){
+    echo "Moviendo arcivo a Dotfiles"
+    mv $1 ~/Dotfiles/$1
     echo "Creando enlace simbolico"
 	ln -s ~/Dotfiles/"$1" ~/$1
-    echo "Añadiendo al repositorio"
-    git add $1
+    #echo "Añadiendo al repositorio"
+    #git add $1
 }
 
     commit(){
