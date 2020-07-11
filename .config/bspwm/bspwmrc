@@ -1,0 +1,154 @@
+#! /bin/bash
+#
+    _                                          
+#   | |__  ___ _ ____      ___ __ ___  _ __ ___ 
+#   | '_ \/ __| '_ \ \ /\ / / '_ ` _ \| '__/ __|
+#   | |_) \__ \ |_) \ V  V /| | | | | | | | (__ 
+#   |_.__/|___/ .__/ \_/\_/ |_| |_| |_|_|  \___|
+#             |_|                               
+
+    		#	Mi configuracion de bspwm
+	    	#	      MedicenDav
+		    #	       My bspwm
+
+
+
+		#Aplicaciones que incian en segundo plano
+#-------------------------------------------------------------
+#Para que funciones aplicaciones en java
+export _JAVA_AWT_WM_NONREPARENTING=1
+#Demonio de teclas
+sxhkd &
+
+#Fija el tema del cursor
+xsetroot -cursor_name left_ptr &
+
+#Fija mi distribución del teclado
+setxkbmap -layout latam &
+
+#Fijar colores y tema de mi terminal y wm
+wal -R
+
+#Matar procesos al iniciar bspwm
+killall picom dunst redshift dockx megasync 
+
+#Iniciar compocitor
+picom &
+
+#Iniciar demonio de notificaciones
+dunst &
+
+#Demonio de musica en terminal
+mpd &
+
+#Dock
+dockx &
+
+#portapapeles
+$HOME/.config/scripts/mclip.py daemon &
+
+#mega
+megasync &
+
+
+			#Scripts de inicio
+#-----------------------------------------------------------
+    #Panel de polybar
+$HOME/.config/polybar/launch.sh &
+
+#Fuente de colores
+. "${HOME}/.cache/wal/colors.sh" &
+
+
+
+		#Configuracion de BSPWM
+#-----------------------------------------------------------
+			#Workspaces
+#Declaracion de areas de trabajo
+bspc monitor -d Home Web Code Pdf Music Multimedia Social Sistem
+
+			#Color
+#Color de la ventana normal
+bspc config normal_border_color '#B6A027'
+
+#Color de la ventana activa
+bspc config active_border_color '#B6A027'
+
+#Color de la ventana enfocada
+bspc config focused_border_color '#B6A027'
+
+#Color de preselección
+bspc config presel_feedback_color '#2E5268' 
+
+
+	#Separacion de ventanas y grosor del borde
+#Relación de división
+bspc config split_ratio    5
+
+#Elimina el borde de la ventana formato monoculo
+bspc config borderless_monocle    true
+
+#Elimina los gaps en ventana monoculo
+bspc config gapless_monocle    false
+
+#bspc config border_radius 15 
+
+Border=4
+gaps=18
+#Grosor del borde
+bspc config border_width         		$Border
+#Separacion de ventanas
+bspc config window_gap           		$gaps
+#Enfocar ventana solo desplazandose
+bspc config focus_follows_pointer 		true
+
+			#Margenes laterales
+lateral=2
+for side in right left ; do
+        bspc config ${side}_padding $lateral
+done
+
+		#Margen Superior
+sup=30
+for side in top bottom ; do
+        bspc config ${side}_padding $sup
+done
+
+bspc config top_padding 30
+bspc config bottom_padding 30
+
+
+		  #Reglas de las ventanas
+	      #Aplicaciones por Workspaces
+###################################################################
+
+bspc rule -a net-sf-jaxodraw-JaxoDraw state=floating
+
+bspc rule -a Termite border=off
+
+bspc rule -a Matplotlib state=floating
+
+bspc rule -a MEGAsync state=floating
+			#Home
+bspc rule -a Conky desktop=\Home
+
+			#Web
+bspc rule -a Google-chrome-unstable desktop=\Web border=off
+
+			#code-oss
+bspc rule -a code-oss desktop=\Code border=off
+
+			#Math
+bspc rule -a Evince desktop=\Math
+			#Music
+bspc rule -a Spotify desktop=\Music
+bspc rule -a ncmpcpp desktop=\Music
+			#Social
+bspc rule -a TelegramDesktop desktop=\Social
+
+bspc rule -a mpv desktop=\Multimedia border=off
+bspc rule -a Midori desktop=\Multimedia state=tiling
+			#Sistem
+bspc rule -a Nitrogen desktop=\Sistem
+bspc rule -a Pavucontrol state=floating desktop=\Sistem
+bspc rule -a nm-conection-editor desktop=\Sistem
