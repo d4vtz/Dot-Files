@@ -16,7 +16,7 @@ Aquí dejo algunos detalles sobre mi configuración:
 + **OS**: [Arch Linux](https://www.archlinux.org/)
 + **WM**: [BSPWM](https://github.com/baskerville/bspwm)
 + **Hotkey Daemon**: [Sxhkd](https://github.com/baskerville/sxhkd)
-+ **Compositor**: [Picom](https://github.com/ibhagwan/picom) 
++ **Compositor**: [Picom-ibhagwan](https://github.com/ibhagwan/picom) 
 + **Shell**: [zsh](https://wiki.archlinux.org/index.php/Zsh)
 + **Terminal**: [Termite](https://github.com/thestinger/termite)
 + **Editor**: [Vim](https://www.vim.org/)
@@ -37,7 +37,8 @@ Aquí dejo las instrucciones que debe seguir para obtener mi configuración.
 
 1. Instalar [BSPWM](https://github.com/baskerville/bspwm) y [SXHKD](https://github.com/baskerville/sxhkd).
 
-   **Usuarios de Arch**  pueden usar los paquetes de AUR [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) y [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/) por medio de un ayudante de paquetes como yay.
+
+   **Para usuarios de Arch**  pueden usar los paquetes de AUR [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) y [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/) por medio de un ayudante de paquetes como yay.
 
    ```shell
    yay -S bspwm-git sxhkd-git
@@ -45,280 +46,196 @@ Aquí dejo las instrucciones que debe seguir para obtener mi configuración.
 
    **Para otras distribuciónes**, pueden construir los paquete siguiendo las instrucciones de compilación [aquí](https://github.com/baskerville/bspwm/wiki).
 
-2. Instalando dependencias: 
 
-   *If you are curious, [click here](https://github.com/elenapan/dotfiles/wiki/Detailed-dependency-table) to see a table of dependencies and why they are needed.*
 
-   + Software
+2. Dependencias: 
 
-     - **Ubuntu** 18.04 or newer (and all Ubuntu-based distributions)
+      Esta es una lista de las dependencias necesarias para que mi configuración de BSPWM funcione correctamente. Si los instala todos, tendrá una experiencia (en su      mayoría) sin complicaciones. 
 
-         ```shell
-         sudo apt install rofi lm-sensors acpid jq fortune-mod redshift mpd mpc maim feh pulseaudio inotify-tools
+      | Dependencia | Descripción | ¿Porque se necesita? |
+      | --- | --- | --- |
+      | `termite` | Terminal | ¡Hay que dejar de tenerle miedo! |
+      | `zsh` | Interprete de Shell | Una shell con elegancia |
+      | `zsh-autosuggestions,  zsh-completions, zsh-syntax-highlighting` | Plugins de zsh | Facilita mucho el uso de la terminal |
+      | `picom-ibhagwan` | Compositor | Habilita la transparencia de las ventanas y las esquinas redondiadas |
+      | `rofi` | Lanzador de aplicaciones | Se explica solo |
+      | `mpd` | Demonio del servidor para reproducir música | Widgets de música |
+      | `ncmpcpp` | Reproductor de música para la terminal| Widgets de música |
+      | `mpv` | Reproductor multimedia  | Se explica solo |
+      | `ranger, thunar` | Administrador de archivos | Se explica  solo |
+      | `dunst` | Demonio de notificaciones | Se explica solo |
+      | `polybar` | Barra de estado | Permite configurar modulos como mostrar los espacios de trabajo, volumen, etc. |
+      | `dockbarx` | Dock | Se explica solo |
+      | `vim` | Editor de texto de consola | Se explica solo |
+      | `spicetify-cli, spicetify-themes-git` | Herramienta de línea de comandos para personalizar el cliente de Spotify  | Mejorar estetica de Spotify |
+      | `redshift` | Control de temperatura de Pantalla | Uso del modo nocturno |
+      | `feh` | Visualizador de imágenes  | Se explica solo |
+      | `python-wal` | Generador de esquemas de colores basado en una imagen | Fijar wallpaper y temas de polybar, rofi, etc |
+      | `lsd` | ls con esteroides | Colorear la salida del comando ls con su respectivos iconos |
+      | `bat` | cat con resaltado de syntaxis | Se explica solo |
+      | `scrot` | Aplicación de linea de comandos para tomar screnshots | Se explica solo |
 
-         # Install light, which is not in the official Ubuntu repositories
-         wget https://github.com/haikarainen/light/releases/download/v1.2/light_1.2_amd64.deb
-         sudo dpkg -i light_1.2_amd64.deb
-         ```
 
-     - **Arch Linux** (and all Arch-based distributions)
 
-         *Assuming your AUR helper is* `yay`
+    - **Arch Linux** (y todas las ditros basadas en Arch)
 
-         ```shell
-         yay -S rofi lm_sensors acpid jq fortune-mod redshift mpd mpc maim feh light-git pulseaudio inotify-tools
-         ```
-   + Services
+        ```shell
+       yay -S termite zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting rofi mpd mpv ncmpcpp ranger dunst polybar dockbarx vim thunar spicetify-cli spicetify-themes-git redshift feh python-pywal lsd bat scrot
+       ```
+      Para instalar [picom-ibhagwan](https://www.reddit.com/r/unixporn/comments/fs8trg/oc_comptonpicom_fork_with_both_tryone144s_dual/) el cual es un fork de picom, tenemos que construirlo siguiendo las instrucciones de compilación o bien en Arch ejecutamos:
 
       ```shell
-      # For automatically launching mpd on login
-      systemctl --user enable mpd.service
-      systemctl --user start mpd.service
-      # For charger plug/unplug events (if you have a battery)
-      sudo systemctl enable acpid.service
-      sudo systemctl start acpid.service
-      ```
+      git clone https://github.com/ibhagwan/picom-ibhagwan-git
+       makepkg -si
+      ``` 
 
-3. Install needed fonts
+    - **Para otras distribuciones**
 
-   You will need to install a few fonts (mainly icon fonts) in order for text and icons to be rendered properly.
+      Pueden buscar los paquetes en el repositorio de su distro (pueden cambiar los nombres), o bien buscar el código fuente de los paquetes y compilarlos usted mismo.
 
-   Necessary fonts:
-   + **Typicons** - [github](https://github.com/fontello/typicons.font)
-   + **Material Design Icons** - [dropbox](https://www.dropbox.com/s/4fevs095ho7xtf9/material-design-icons.ttf?dl=0)
-   + **Icomoon** - [dropbox](https://www.dropbox.com/s/hrkub2yo9iapljz/icomoon.zip?dl=0)
-   + **Nerd Fonts** - [website](https://www.nerdfonts.com/font-downloads)
-      (You only need to pick and download one Nerd Font. They all include the same icons)
-   + **Scriptina** - [website](https://www.dafont.com/scriptina.font) - Handwritten font used in the lock screen
 
-   Optional fonts:
-   + **My custom Iosevka build** - [dropbox](https://www.dropbox.com/s/nqyurzy8wcupkkz/myosevka.zip?dl=0) - 💙 *my favorite monospace font*
-   + **Anka/Coder**
-   + **Google Sans** - 💙 *my favorite sans font*
-   + **Roboto Condensed**
+3. Instalar fuentes necesarias:
+
+   Necesita instalar algunas fuentes de texto para poder visualizar correctamente algunos iconos de polybar y de la terminal.
+   Estas fuentes se encuentran en mis dotfiles.
+   
+   Fuentes:
+   + **Iosevka Nerd Font** 
+   + **Comfortaa Regular** 
+   + **Hack Regular Nerd Font**
+   
+   Fuentes Opcionales:
    + **San Francisco Display**
 
-   Once you download them and unpack them, place them into `~/.fonts` or `~/.local/share/fonts`.
-   - You will need to create the directory if it does not exist.
-   - It does not matter that the actual font files (`.ttf`) are deep inside multiple directories. They will be detected as long as they can be accessed from `~/.fonts` or `~/.local/share/fonts`.
-
-   Finally, run the following in order for your system to detect the newly installed fonts.
+   Para instalarlas solo basta con moverlas a `~/.fonts` o `~/.local/share/fonts`.
+   - Debera crear el directorio en caso de no existir.
+   
+   Finalmente, ejecute el siguente comando para que su sistema detecte las fuentes instaladas.
    ```shell
    fc-cache -v
    ```
 
-4. Install my AwesomeWM configuration files
+4. Instalar mi configuración de BSPWM.
 
    ```shell
-   git clone https://github.com/elenapan/dotfiles
-   cd dotfiles
-   [ -e ~/.config/awesome ] && mv ~/.config/awesome ~/.config/awesome-backup-"$(date +%Y.%m.%d-%H.%M.%S)" # Backup current configuration
-   cp -r config/awesome ~/.config/awesome
+   git clone https://github.com/medicendav/Dotfiles.git
+   cd Dotfiles
+   chmod +x INSTALL
+   ./INSTALL
    ```
 
-4. Configure stuff
+5. Configurar Archivos.
 
-   The relevant files are inside your `~/.config/awesome` directory.
+   La configuración de archivos básicos para mi entorno son:
 
-   + User preferences and default applications
+   + **Configurar BSPWM**
 
-      In `rc.lua` there is a *User variables and preferences* section where user preferences and default applications are defined.
-      You should change those to your liking. Probably the most important change you can make is to set your `terminal`.
+      El archivo de configuraciones de BSPWM se encuentra como `~/.config/bspwm/bspwmrc`.
 
-      For more sophisticated control over your apps, check out `apps.lua`
-
-      Note: For the weather widgets to work, you will also need to create an account on [openweathermap](https://openweathermap.org), get your key, look for your city ID, and set `openweathermap_key` and `openweathermap_city_id` accordingly.
-
-   + Have a general idea of what my keybinds do
-
-      My keybinds will most probably not suit you completely, but on your first login you might need to know how to navigate the desktop.
-
-      See the [keybinds](#keybinds) section for more details.
-
-      You can edit `keys.lua` to configure your keybinds.
-
-   + *(Optional)* This is also a good time to take a look at [how my configuration is structured](#awesomewm-configuration-file-structure) in order to understand the purpose of each file.
-
-5. Login with AwesomeWM 🎉
-
-   Congratulations, at this point you should be ready to log out of your current desktop and into AwesomeWM.
-
-   Your login screen should have a button that lets you change between available desktop sessions. If not, [click here](https://github.com/elenapan/dotfiles/wiki/Troubleshooting#i-cannot-find-the-login-screen-button-that-lets-me-login-with-awesomewm) to find out how to fix it.
-
-   Try it, play with it, enjoy it.
-   Consider checking out the [Advanced setup](https://github.com/elenapan/dotfiles/wiki/Advanced-setup) in order to enable and configure various components that are not needed to use the desktop, but provide a better experience.
+      En este archivo se encuentran todas losa configuraciones sobre el comportamiento de las ventanas, apicaciones de inicio, espacios de trabajo, etc
 
 
-6. *(Optional)* Eye-candy
+ 
+   + **Configurar SXHKD**
 
-   + Set the wallpaper
+      El archivo de configuraciones de SXHKD se encuentra como  `~/.config/sxhkd/sxhkdrc`. Dentro de este archivo van todos los shortcuts configurados, como el lanzador de rofi, la terminal, portapapeles, cerrar sesión, etc. Ver [Shortcuts](#Shortcuts) para más detalles.
+
+
+   
+   + **Configurar PICOM**
+
+      El archivo de configuraciones de PICOM se encuentra como  `~/.config/picom/picom.conf`. En este archivo van todas las configuraciones del compositor, como la transparencia, el desenfoque, esquinas redondeadas, sombras, etc.
+
+   + **Configurar POLYBAR**
+
+      Las configuraciones de polybar se encuentran dentro del directorio `~/.config/polybar`, En este directorio se encuentra en script de inicio de polybar `launch.sh`, el cual manda a llamar a las barras `top.ini`, `down-left.ini` y `down-right.ini`.
+
+      Además estos archivos mandan a llamar la los módulos que que requieran dentro de la carpeta `~/.config/polybar/modulos`, sientese libre de modificarlos a su gusto.
+
+   + *Y muchos más...*
+
+
+
+6. Tema visual
+
+   **Esquema de colores y wallpaper**
+
+   + (Opcional) Fijar el wallpaper, puedes configurar tu wallpaper con ayuda de `feh`, ejecutando el siguiente comando,
 
       ```shell
       feh --bg-fill /path/to/your/wallpaper
       ```
 
-   + Load a colorscheme
+   + (Opcional) Cargar esquemas de colores,
+
 
       ```shell
       xrdb -merge /path/to/colorscheme
       ```
 
-      Notes:
-      - To see the new colors you should restart AwesomeWM with <kbd>super+shift+r</kbd> or by right-clicking the desktop and clicking the gear icon (bottom-right).
-      - In the [.xfiles](.xfiles) directory of the repository I provide you with a few of my own colorschemes, but you can also use your favorite one.
-      - All of my AwesomeWM themes take their colors from `xrdb`. This also means that they play nice with tools like [pywal](https://github.com/dylanaraps/pywal).
+      Observaciones:
+      
+      - Todos mi temas de mi BSPWM toman los colores de `xrdb`. Esto va bien con el uso de  [pywal](https://github.com/dylanaraps/pywal).
+
+      Yo utilizo `pywal` para generar mis esquemas de colores de acuerdo a mi wallpaper, por lo cual solo se necesita ejecutar el siguente comando para generar los esquemas de colores y fija el wallpaper.
+
+      ```shell
+      wal -i "path/to/img"
+      ```
+
+   **Temas de iconos y ventanas**
+      
+      Iconos:
+      + **[Tela](https://github.com/vinceliuice/Tela-icon-theme)** (Tela Manjaro)
+      + **[Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)** (ePapirus) 
+      
+      Temas:
+      + **[Tarde de olas](https://github.com/medicendav/Dotfiles/tree/master/.themes/tarde-de-olas)** (Tema creado con Oomox)
+      + **[Adapta](https://github.com/adapta-project/adapta-gtk-theme)** (Adapta-Nokto)
+      
+
+7. Inicie sesión con BSPWM.
+
+En hora buena, en este punto ya debería estar listo para cerrar sesión en su escritorio actual y utilizar BSPWM.
+
+Pruébalo, juega con él, disfrútalo.
 
 
-## AwesomeWM configuration: File structure
 
-After setting up my AwesomeWM configuration, inside `~/.config/awesome` you will find the following:
+## Shortcuts
 
-+ 🔧 `rc.lua`
+Yo uso <kbd>super</kbd> (tecla Windows) como mi tecla principal.
 
-   The main configuration file which binds everything together.
-
-   This file allows you to set user preferences, choose themes, configure default layouts for each tag, window rules and more.
-   It is also responsible for initializing all necessary desktop components.
-
-+ ⌨️ `keys.lua`
-
-   It initializes global and client keybinds.
-   In addition, it defines what mouse clicks do on windows, window titlebars or the desktop.
-
-+ 🎮 `apps.lua`
-
-   Provides functions for *activating* various applications, meaning either spawning them, focusing them or toggling them depending on whether they are currently running or not.
-
-+ 📚 `helpers.lua`
-
-   Provides various uncategorized helper functions to make our life easier and our code cleaner.
-
-+ 🎨 `themes` directory
-
-   Here you can find a directory for each available theme.
-
-   Such a directory should include at least a `theme.lua` and optionally icons, wallpaper, and whatever asset you need that is theme-specific.
-   The `theme.lua` file usually sets colors, sizes and positions of various elements.
-
-+ 🖼 `icons` directory
-
-   Here you can find a directory for each available icon theme and an `init.lua` file which initializes the `icons` variables.
-
-   Icons can be images taken from the selected icon theme or text symbols taken from some icon font.
-
-   For example, `icons.image.firefox` can be used to refer to your selected theme's Firefox icon instead of using the full path to the image. This makes it easy to switch between themes.
-
-   Note: Icon themes defined here have nothing to do with your system-wide icon theme.
-
-+ 🎀 `decorations` directory
-
-   In this directory you can find window decoration (titlebar) styles.
-
-   They affect the layout of the titlebar and the titlebar buttons (e.g. close, maximize, minimize).
-
-   Optionally, they may implement more complex decorations, using multiple titlebars around the window to create a certain look (e.g. double borders) or achieve anti-aliased window corners.
-
-   Finally, some clients may have their own special titlebars added to them in order to simulate a custom UI.
-   For now, a custom `mpd` UI has been implemented.
-
-   The `decorations` module also includes helper functions that generate titlebar buttons, in case you do not have/want image buttons.
-
-+ 💎 `elemental` directory
-
-   Contains desktop components or *elements* such as bars, sidebars, lock screens and more.
-   Elements with multiple available themes have their own directory. For example:
-
-   + In `elemental/bar` you can find a `.lua` file for each available bar or bar group.
-
-      Multiple bars can be created in one file.
-      Every bar theme provides the global functions `wibars_toggle()` and `tray_toggle()` which you can bind to any keys you want.
-
-   + In `elemental/sidebar` you can find a `.lua` file for each available sidebar theme.
-
-   + ... And so on.
-
-+ 💬 `notifications` directory
-
-   This directory includes notification daemons that trigger notifications for various desktop events such as volume or brightness change.
-   Also it includes notification themes that define the layout of the notification contents.
-
-+ 🍜 `noodle` directory: Contains widgets that usually take up more than 50 lines of code.
-
-   Widgets display information in visual form (text, images, progress bars).
-   Without them, all desktop elements would just be empty boxes.
-   They are used by the desktop components defined inside the `elemental` directory.
-   Widgets can be defined in any file but I prefer to separate a big widget (with a lot of logic) from the element I am using it in.
-
-+ 😈 `evil` directory
-
-   Contains daemons (processes that run in the background) which emit system info.
-
-   They provide an easy way of writing widgets that rely on external information. All you need to do is subscribe to the signal a daemon provides.
-   No need to remember which shell command gives you the necessary info or bother about killing orphan processes. Evil takes care of everything.
-
-## Keybinds
-
-I use <kbd>super</kbd> AKA Windows key as my main modifier.
-
-#### Keyboard
-| Keybind | Action |
+| Shortcuts | Acción |
 | --- | --- |
-| <kbd>super + enter</kbd> | Spawn terminal |
-| <kbd>super + shift + enter</kbd> | Spawn floating terminal |
-| <kbd>super + d</kbd> | Launch rofi |
-| <kbd>super + shift + q</kbd> | Close client |
-| <kbd>super + control + space</kbd> | Toggle floating client |
-| <kbd>super + [1-0]</kbd> | View tag AKA change workspace (for you i3 folks) |
-| <kbd>super + shift + [1-0]</kbd> | Move focused client to tag |
-| <kbd>super + s</kbd> | Tiling layout |
-| <kbd>super + shift + s</kbd> | Floating layout |
-| <kbd>super + w</kbd> | Maximized / Monocle layout |
-| <kbd>super + [arrow keys]</kbd> | Change focus by direction |
-| <kbd>super + [hjkl]</kbd> | ^ |
-| <kbd>super + shift + [arrow keys]</kbd> | Move client by direction. Move to edge if it is floating. |
-| <kbd>super + shift + [hjkl]</kbd> | ^ |
-| <kbd>super + control + [arrow keys]</kbd> | Resize client |
-| <kbd>super + control + [hjkl]</kbd> | ^ |
-| <kbd>super + f</kbd> | Toggle fullscreen |
-| <kbd>super + m</kbd> | Toggle maximize |
-| <kbd>super + n</kbd> | Minimize |
-| <kbd>super + shift + n</kbd> | Restore minimized |
-| <kbd>super + c</kbd> | Center floating client |
-| <kbd>super + u</kbd> | Jump to urgent client (or back to last tag if there is no such client) |
-| <kbd>super + b</kbd> | Toggle bar |
-| <kbd>super + =</kbd> | Toggle tray |
+| <kbd>super + enter</kbd> | Abrir terminal (Termite)|
+| <kbd>super + shift + enter</kbd> | Lanzar rofi |
+| <kbd>super + q</kbd> | Cerrar ventana |
+| <kbd>super + shitf + r </kbd> | Recargar configuración de bspwm |
+| <kbd>super + alt + r </kbd> | Recargar configuración de sxhkd |
+| <kbd>alt + w</kbd> | Abrir navegador (Google-Chrome) |
+| <kbd>super + f</kbd> | Abrir administrador de archivos (Thunar) |
+| <kbd>super + End</kbd> | Menu para cerrar, bloquear, reiniciar y apagar |
+| <kbd>super + shift + p </kbd> | Cambiar a ventana a modo fullscreen |
+| <kbd>super + shitf + o </kbd> | Cambiar a ventana a modo flotante |
+  <kbd>super + shift + i </kbd> | Cambiar a ventana a modo tiling |
+  <kbd>super + shift + f </kbd> | Cambiar a ventana a modo monoculo |
+| <kbd>alt + [Flechas]</kbd> | Alternar entre nodos |
+| <kbd>super + [Prior,Next] </kbd> | Cambiar entre workspaces |
+| <kbd>super + [Letf,Right]</kbd> | Cambiar entre workspace ocupados |
+| <kbd>super + [h,w,c,p,m,v,t,s]</kbd> | Moverse a un workspace especifico |
+| <kbd>super + shift + [h,w,c,p,m,v,t,s]</kbd> | Enviar un nodo a un workspace especifico |
+| <kbd>ctrl + [Flechas]</kbd> | Mover ventanas flotantes |
+| <kbd>super + z : [Flechas]</kbd> | Cambiar de tamaño las ventanas |
+| <kbd>super + shift + [Prior, Next]</kbd> | Rotar arbol de ventanas |
+|
+Y mucho más, ver archivo `~/.config/sxhkd/sxhkdrc`.*
 
-*... And many many more.*
 
-#### Mouse on the desktop
-| Mousebind | Action |
-| --- | --- |
-| `left click` | Dismiss all notifications, close sidebar and main menu |
-| `double left click` | Jump to urgent client (or back to last tag if there is no such client) |
-| `right click` | App drawer |
-| `middle click` | Dashboard |
-| `scroll up/down` | Cycle through tags |
-| `move to screen edge` | Show sidebar |
 
-#### Mouse on window titlebars
-| Mousebind | Action |
-| --- | --- |
-| `left click` | Focus and raise |
-| `left click (drag)` | Move |
-| `right click (drag)` | Resize |
-| `middle click` | Close |
+### Disfruta en mundo de los Tiling Window Manager
+Si disfrutas mis temas y te gustaría mostrar tu agradecimiento, puedesinvitarme un cafe.
 
-### Notes
-If you have any questions or issues, first check if you can find your answer in the [wiki](https://github.com/elenapan/dotfiles/wiki).
-Then you can search in the repository's [issues](https://github.com/elenapan/dotfiles/issues) or make a new issue.
+¡Gracias desde el fondo de mi corazón! 
+- [**PayPal**](paypal.me/medicenDav)
 
-### Tipjar
-If you enjoy my themes and would like to show your appreciation, you may tip me here.
-
-It is never required but always appreciated.
-
-Thank you from the bottom of my heart! 💙
-
-- [**Patreon**](https://www.patreon.com/elenapan)
-- **Ethereum**: 0x831539d94155C797f786e99f1D061BEc7F11bD38
-- **Bitcoin**: 12j3D4KR94LY7Svvmp3KzGbfGC4YCZkCLe
