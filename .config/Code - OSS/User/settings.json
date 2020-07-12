@@ -149,4 +149,5 @@
     ],
     "latex-workshop.view.pdf.invert": 1,
     "window.zoomLevel": 0,
+    "git.autofetch": true,
 }
