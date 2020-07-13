@@ -28,7 +28,9 @@ Aquí dejo algunos detalles sobre mi configuración:
 
 ## Novedades
 
-- Nada por ahora
+- **Selector de temas**: Ajusta los temas tanto gtk2 y gtk3 como de Termite de acuerdo a el wallpaper seleccionado con ayuda de pywal.
+
+- Código más limpio
 
 
 ## Setup
