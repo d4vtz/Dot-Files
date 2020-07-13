@@ -1,89 +1,44 @@
 [options]
-
 allow_bold = true
-
 audible_bell = true
-
 bold_is_bright = true
-
 clickable_url = true
-
 dynamic_title = true
-
 font = Iosevka Nerd Font 9
-
 fullscreen = true
-
 #icon_name = terminal
-
 mouse_autohide = true
-
 scrollback_lines = 10000
-
 urgent_on_bell = true
 
-
-
 #  is used by default if set, with xdg-open as a fallback
-
 browser = xdg-open
 
-
-
 # system, on or off
-
 cursor_blink = system
 
-
-
 # block, underline or ibeam
-
 cursor_shape = ibeam
 
-
-
 # ====================================
-
 [colors]
 
+foreground=   #9da4ca
+background=   #011932
+cursor=       #9da4ca
 
-
-foreground=   #e8dbcd
-
-background=   #081550
-
-cursor=       #e8dbcd
-
-
-
-color0=       #081550
-
-color1=       #25608F
-
-color2=       #566B8C
-
-color3=       #8E7A86
-
-color4=       #56ABB1
-
-color5=       #A4A4A0
-
-color6=       #E3AC97
-
-color7=       #e8dbcd
-
-color8=       #a2998f
-
-color9=       #25608F
-
-color10=      #566B8C
-
-color11=      #8E7A86
-
-color12=      #56ABB1
-
-color13=      #A4A4A0
-
-color14=      #E3AC97
-
-color15=      #e8dbcd
+color0=       #011932
+color1=       #664E6C
+color2=       #8A3255
+color3=       #A63756
+color4=       #BB4457
+color5=       #053887
+color6=       #155499
+color7=       #9da4ca
+color8=       #6d728d
+color9=       =      #8A3255
+color11=      #A63756
+color12=      #BB4457
+color13=      #053887
+color14=      #155499
+color15=      #9da4ca
