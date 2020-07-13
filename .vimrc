@@ -9,6 +9,7 @@ Plug 'preservim/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'dylanaraps/wal.vim'
 call plug#end()
 
 
@@ -32,7 +33,8 @@ call plug#end()
     set showmatch
     set laststatus=2
     
-    let g:gruvbox_contrast_dark="hard"
+    colorscheme wal
+    "let g:gruvbox_contrast_dark="hard"
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#left_alt_sep = '|'
     let g:airline#extensions#tabline#formatter = 'default'

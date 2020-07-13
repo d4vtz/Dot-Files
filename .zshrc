@@ -6,9 +6,9 @@
 
 #		Aplicar esquema de colores de pywal
 #################################################################
-#export TERM=xterm-256color
-#(/usr/bin/cat /home/medicendav/.cache/wal/sequences &)
-#source /home/medicendav/.cache/wal/colors-tty.sh
+export TERM=xterm-256color
+(/usr/bin/cat /home/medicendav/.cache/wal/sequences &)
+source /home/medicendav/.cache/wal/colors-tty.sh
 
 export PATH="${PATH}:${HOME}/.local/bin/:${HOME}/.config/scripts/"
 export PATH
@@ -229,5 +229,5 @@ alias remove='sudo xbps-remove -R'
 #			By: CallmeDav
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 
 # Author: Sophie Bernadin-Mercier
@@ -56,6 +55,7 @@ selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launch_rofi[@]}")"
 ###    Apply selected wallpaper   ###
 
 if [ ! -z $selection ]; then
-	exec `wal -i "${menu[${selection}]}"`
+	exec `wal -i "${menu[${selection}]}" -o ~/.config/scripts/termite_config_theme.sh -t`
 stop
 fi
+
