@@ -110,8 +110,8 @@ super + Tab
     	bspc desktop -f last
 
 #Enviar ventanas a diferentes WorkSpaces
-#super + {_,shift + }{1-8}
-#    bspc {desktop -f,node -d} '^{1-9,10}' --follow
+super + {_,shift + }{1-8}
+    bspc {desktop -f,node -d} '^{1-9,10}' --follow
 
 
 # Cambiar el tamaño de las gaps 
