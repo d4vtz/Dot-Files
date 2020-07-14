@@ -1,0 +1,154 @@
+{
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "workbench.colorTheme": "Community Material Theme",
+    "window.menuBarVisibility": "toggle",
+    "workbench.sideBar.location": "left",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "'Iosevka','Iosevka Nerd Font'",
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
+    "editor.wordWrapColumn": 90,
+    "workbench.activityBar.visible": true,
+    "cSpell.language": "en,es",
+    "cSpell.enabled": true,
+    "latex-workshop.progress.runIconType": "Solid Circled",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.outDir": "%DIR%/Build",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.latex.tools": [
+
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=Build", 
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk_rconly",
+            "command": "latexmk",
+            "args": [
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%OUTDIR%/%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "makeindex",
+            "command": "makeindex",
+            "args": [
+                "%OUTDIR%/%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "rnw2tex",
+            "command": "Rscript",
+            "args": [
+                "-e",
+                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+
+        {
+            "name": "Completa ➞ pdflatex ➞ makeindex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "makeindex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "Compile Rnw files",
+            "tools": [
+                "rnw2tex",
+                "latexmk"
+            ]
+        }
+    ],
+    "cSpell.userWords": [
+        "Hamiltoniano",
+        "definiendola",
+        "lagrangiana",
+        "mapeo",
+        "n",
+        "parametrizaci",
+        "parametrizaciones",
+        "parametrización",
+        "reordenando",
+        "sxhkd",
+        "variacional"
+    ],
+    "latex-workshop.view.pdf.invert": 1,
+    "window.zoomLevel": 0,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+}
