@@ -1,4 +1,6 @@
-		#	Mi configuracion de sxhkd
+
+
+#	Mi configuracion de sxhkd
 		#	CallmeDav
 		
 ######################################################
@@ -49,29 +51,25 @@ super + shift + Return
 alt + p
     evince
 
-#Spotify
-alt + s
-    ~/.config/scripts/spotify
-
 #Ocultar Telegram
-alt + c
-    ~/.config/scripts/ocultar_ventana TelegramDesktop telegram-desktop
+alt + t
+    ~/.scripts/ocultar_ventana TelegramDesktop telegram-desktop
     
 #Ocultar Spotify
-alt + shift + s
-    ~/.config/scripts/ocultar_ventana Spotify spotify
+alt + s
+    ~/.scripts/ocultar_ventana Spotify spotify
 
 #Cambiar el wallpaper y colores de la paleta
 alt + Home
-   ~/.config/scripts/set-wall.sh 
+   ~/.scripts/set-wall.sh 
 
 #Menu para cerrar sesión, reiniciar, bloquear, apagar
 super + End
-   ~/.config/scripts/powermenu.sh
+   ~/.scripts/powermenu.sh
 
 #Portapapeles
 super + x
-    ~/.config/scripts/portapapeles.sh
+    ~/.scripts/portapapeles.sh
 
 ###############################################################
 ###########	 Configuracion de las ventanas   ##############
@@ -112,12 +110,8 @@ super + Tab
     	bspc desktop -f last
 
 #Enviar ventanas a diferentes WorkSpaces
-#super + {_,shift + }{1-9,0}
+#super + {_,shift + }{1-8}
 #    bspc {desktop -f,node -d} '^{1-9,10}' --follow
-
-#Enviar ventanas a diferentes WorkSpaces
-super + {_,shift + }{h,w,c,p,m,v,t,s}
-    bspc {desktop -f,node -d} '^{1-8}' --follow
 
 
 # Cambiar el tamaño de las gaps 
@@ -139,24 +133,13 @@ super + z : {Left,Down,Up,Right}
     bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
     bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
 
-
-
-# Expand/contract a window by moving one of its side outward/inward
-super + shift + z : {Left,Down,Up,Right}
-    STEP=20; SELECTION={1,2,3,4}; \
-    bspc node -z $(echo "left $STEP 0,bottom 0 -$STEP,top 0 $STEP,right -$STEP 0" | cut -d',' -f$SELECTION) || \
-    bspc node -z $(echo "right $STEP 0,top 0 -$STEP,bottom 0 $STEP,left -$STEP 0" | cut -d',' -f$SELECTION)
-
-
-
-
 #Expandir ventanas desde la derecha
-#super + alt + {Left,Down,Up,Right}
-#    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + alt + {Left,Down,Up,Right}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 #Expandir ventanas desde la izquierda
-#super + alt + ctrl + {Left,Down,Up,Right}
-#    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+super + alt + ctrl + {Left,Down,Up,Right}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 #Mover ventanas flotantes
 ctrl + {Left,Down,Up,Right}
@@ -187,26 +170,17 @@ super + shift + {Prior,Next}
 
 #Subir Volumen
 XF86AudioRaiseVolume
-    ~/.config/scripts/volumen/volume.sh up
+    ~/.scripts/volume.sh up
 
 #Bajar volumen
 XF86AudioLowerVolume
-    ~/.config/scripts/volumen/volume.sh down
+    ~/.scripts/volume.sh down
 
 #Mute
 XF86AudioMute
-    ~/.config/scripts/volumen/volume.sh mute
-
-#Subir brillo
-#XF86MonBrightnessUp
-#	~/.config/scripts/brillo-up.sh
-
-#Bajar brillo
-#XF86MonBrightnessDown
-#	~/.config/scripts/brillo-down.sh
+    ~/.scripts/volumen/volume.sh mute
 
 #Captura de pantalla
-Print
-	~/.config/scripts/screen.sh & notify-send 'Tomada captura de pantalla'
-
+Print + {_,super}
+	~/.scripts/screen.sh {normal,retraso}
 

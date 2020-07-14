@@ -45,7 +45,7 @@ mpd &
 dockx &
 
 #portapapeles
-$HOME/.config/scripts/mclip.py daemon &
+$HOME/scripts/mclip.py daemon &
 
 #mega
 megasync &
@@ -69,10 +69,10 @@ bspc monitor -d Home Web Code Pdf Music Multimedia Social Sistem
 
 			#Color
 #Color de la ventana normal
-bspc config normal_border_color '$color1'
+bspc config normal_border_color '$color4'
 
 #Color de la ventana activa
-bspc config active_border_color '$color2'
+bspc config active_border_color '$color6'
 
 #Color de la ventana enfocada
 bspc config focused_border_color '$color15'
