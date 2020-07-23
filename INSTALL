@@ -10,7 +10,7 @@ mkdir -p ~/.config
 echo ""
 echo "Creando los enlaces simbolicos"
 echo "------------------------------------------------------"
-dir=$pwd
+dir=$HOME/Dotfiles
 
 ln -s $dir/.config/bspwm ~/.config/bspwm
 echo "Archivo de configuración de BSPWM instalado"
