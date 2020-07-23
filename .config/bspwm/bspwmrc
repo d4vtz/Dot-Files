@@ -42,10 +42,10 @@ dunst &
 mpd &
 
 #Dock
-dockx &
+plank &
 
 #portapapeles
-$HOME/scripts/mclip.py daemon &
+copyq &
 
 #mega
 megasync &
@@ -133,7 +133,7 @@ bspc rule -a MEGAsync state=floating
 bspc rule -a Conky desktop=\Home
 
 			#Web
-bspc rule -a Google-chrome-unstable desktop=\Web border=off
+bspc rule -a Google-chrome desktop=\Web border=off
 
 			#code-oss
 bspc rule -a code-oss desktop=\Code border=off
