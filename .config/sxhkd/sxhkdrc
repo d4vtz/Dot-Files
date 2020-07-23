@@ -21,27 +21,27 @@ super + alt + r
 
 #Navegador
 alt + w
-        google-chrome-unstable
+    google-chrome-stable
 
 #Terminal
 super + Return
-        termite
-
+#    termite
+    alacritty
 #Editor de texto
 alt + g
 	code
 
 #Administrador de archivos
 alt + f
-        thunar
+    thunar
 
 #Configuración del volumen
 alt + v
-	pavucontrol
+    pavucontrol
 
 #Abrir Network-Manager
 alt + n
-	nm-connection-editor
+    nm-connection-editor
 
 #Menu de aplicaciones Rofi
 super + shift + Return
@@ -178,9 +178,4 @@ XF86AudioLowerVolume
 
 #Mute
 XF86AudioMute
-    ~/.scripts/volumen/volume.sh mute
-
-#Captura de pantalla
-Print + {_,super}
-	~/.scripts/screen.sh {normal,retraso}
 
