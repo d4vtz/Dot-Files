@@ -2,8 +2,8 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/medicendav/.gtkrc-2.0.mine"
-gtk-theme-name="tarde-de-olas"
-gtk-icon-theme-name="Tela-manjaro"
+gtk-theme-name="Adapta-Nokto"
+gtk-icon-theme-name="ePapirus"
 gtk-font-name="Comfortaa 10"
 gtk-cursor-theme-name="capitaine-cursors-light"
 gtk-cursor-theme-size=0
