@@ -27,9 +27,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-
-
-
 #################################################################
 #
 #	     Mis funciones
@@ -189,34 +186,19 @@ alias brillo='./.config/scripts/brillo.sh'
 alias wpa='sudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf'
 
 
-alias bspwmrc='vim ~/.config/bspwm/bspwmrc'
-alias sxhkdrc='vim ~/.config/sxhkd/sxhkdrc'
-alias zshrc='vim ~/.zshrc'
-alias vimrc='vim ~/.vimrc'
+alias vim='nvim'
+alias bspwmrc='nvim ~/.config/bspwm/bspwmrc'
+alias sxhkdrc='nvim ~/.config/sxhkd/sxhkdrc'
+alias zshrc='nvim ~/.zshrc'
+alias init.vim='nvim ~/.config/nvim/init.vim'
 
 
-alias tard='tar -cvf'
-alias untard='tar -xvf'
-
-alias targz='tar -czvf'
-alias untargz='tar -xzvf'
-
-alias dotfiles='cd ~/Documentos/.dotfiles'
 alias py='python'
-alias latex='latexmk -pdf -pvc'
-alias nm-editor='sudo nm-connection-editor'
-alias virtualpy='source venv/bin/activate'
-alias libro='cd ~/Documentos/Latex/Libro && code .'
-
 alias Tex='tllocalmgr'
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 #		      --  pacman  --
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-alias installer='sudo xbps-install -S'
-alias update='sudo xbps-install -Su'
-alias find-pack='sudo xbps-query -Rs'
-alias remove='sudo xbps-remove -R'
 
 
 
@@ -228,5 +210,7 @@ alias remove='sudo xbps-remove -R'
 #			By: CallmeDav
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# To customize prompt, run `p10k configure` or edit ~/Dotfiles/.p10k.zsh.
+[[ ! -f ~/Dotfiles/.p10k.zsh ]] || source ~/Dotfiles/.p10k.zsh
