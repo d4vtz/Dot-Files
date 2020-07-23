@@ -23,22 +23,22 @@ cursor_shape = ibeam
 # ====================================
 [colors]
 
-foreground=   #e8dbcd
-background=   #081550
-cursor=       #e8dbcd
+foreground=   #eee2c8
+background=   #081B2A
+cursor=       #eee2c8
 
-color0=       #081550
-color1=       #25608F
-color2=       #566B8C
-color3=       #8E7A86
-color4=       #56ABB1
-color5=       #A4A4A0
-color6=       #E3AC97
-color7=       #e8dbcd
-color8=       #a2998f
-color9=       =      #566B8C
-color11=      #8E7A86
-color12=      #56ABB1
-color13=      #A4A4A0
-color14=      #E3AC97
-color15=      #e8dbcd
+color0=       #081B2A
+color1=       #737B86
+color2=       #436AAD
+color3=       #139B92
+color4=       #53BBB4
+color5=       #6D98E5
+color6=       #ACAFBC
+color7=       #eee2c8
+color8=       #a69e8c
+color9=       =      #436AAD
+color11=      #139B92
+color12=      #53BBB4
+color13=      #6D98E5
+color14=      #ACAFBC
+color15=      #eee2c8
