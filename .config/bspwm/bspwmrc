@@ -50,7 +50,8 @@ copyq &
 #mega
 megasync &
 
-
+#Dropbox
+dropbox &
 			#Scripts de inicio
 #-----------------------------------------------------------
     #Panel de polybar
