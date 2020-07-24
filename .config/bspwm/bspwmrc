@@ -30,13 +30,14 @@ setxkbmap -layout latam &
 wal -R
 
 #Matar procesos al iniciar bspwm
-killall picom dunst redshift dockx megasync 
+killall picom dunst redshift dockx megasync dropbox ntfd 
 
 #Iniciar compocitor
 picom &
 
-#Iniciar demonio de notificaciones
+#Iniciar demonios de notificaciones
 dunst &
+ntfd &
 
 #Demonio de musica en terminal
 mpd &
