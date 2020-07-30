@@ -49,7 +49,7 @@ plank &
 copyq &
 
 #mega
-megasync &
+#megasync &
 
 #Dropbox
 dropbox &

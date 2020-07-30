@@ -169,4 +169,4 @@ gtk-xft-rgba=rgb
 
 fi
 
-pkill -KILL -u medicendav
+#pkill -KILL -u medicendav

@@ -71,6 +71,11 @@ super + End
 super + x
     ~/.scripts/portapapeles.sh
 
+#Buscador de pdfs
+ctrl + shift + p
+ ~/.scripts/Busqueda/buscar_pdf.py
+
+
 ###############################################################
 ###########	 Configuracion de las ventanas   ##############
 ###############################################################
@@ -170,12 +175,13 @@ super + shift + {Prior,Next}
 
 #Subir Volumen
 XF86AudioRaiseVolume
-    ~/.scripts/volume.sh up
+    ~/.scripts/pulseaudio.sh -Subir
 
 #Bajar volumen
 XF86AudioLowerVolume
-    ~/.scripts/volume.sh down
+    ~/.scripts/pulseaudio.sh -Bajar
 
 #Mute
 XF86AudioMute
-
+    ~/.scripts/pulseaudio.sh -Silencio
+    
