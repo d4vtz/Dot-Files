@@ -1,6 +1,7 @@
 #!/bin/env python
 
-import Busqueda as find
+from Busqueda import Busqueda
+
 
 RUTA = '/home/medicendav/Documentos/Biblioteca/'
 EXTENSIONES = [
@@ -8,10 +9,10 @@ EXTENSIONES = [
         '.djvu'
         ]
 
-ruta = find.buscar(EXTENSIONES, RUTA, 'Buscar libro')
+ruta = Busqueda.buscar(EXTENSIONES, RUTA, 'Buscar libro')
 
 zathura = [
         'zathura',          # Visualizador de documentos
         ruta                # Cadena de texto con la ruta a ejecutar
         ]
-ejecutar = find.Shell(zathura)
+ejecutar = Busqueda.Shell(zathura)
