@@ -1,0 +1,61 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Material Theme",
+    "editor.fontFamily": "'Iosevka Nerd Font'",
+    "editor.fontSize": 12,
+    "latex-workshop.view.pdf.backgroundColor": "#000000",
+    "latex-workshop.view.pdf.invert": 1,
+    "workbench.panel.defaultLocation": "right",
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.enableBell": true,
+    "window.menuBarVisibility": "toggle",
+    "latex-workshop.latex.outDir": "%DIR%/Build",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipes": [
+
+        {
+            "name": "Tesis",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        }
+    ],
+
+    "latex-workshop.latex.tools": [
+        
+
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        }
+    ],
+    "cSpell.language": ",es",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+}
