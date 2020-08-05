@@ -72,7 +72,7 @@ super + x
     ~/.scripts/portapapeles.sh
 
 #Buscador de pdfs
-ctrl + shift + p
+ctrl + alt + p
  ~/.scripts/buscar_pdf.py
 
 
@@ -185,3 +185,7 @@ XF86AudioLowerVolume
 XF86AudioMute
     ~/.scripts/pulseaudio.sh -Silencio
     
+#Screenshot
+Print + {_, super}
+    ~/.scripts/screen.sh {-screen, -retraso}
+

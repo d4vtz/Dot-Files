@@ -25,9 +25,6 @@ set runtimepath+=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundleFetch 'Shougo/neobundle.vim'
     NeoBundle 'tiagofumo/vim-nerdtree-syntax-highlight'
-    NeoBundle 'SirVer/ultisnips'
-    NeoBundle 'honza/vim-snippets'
-    NeoBundle 'lervag/vimtex'
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
@@ -43,7 +40,7 @@ NeoBundleCheck
 	set number				"Numero de lineas
 	set relativenumber			"Numero de lineas relativas
 	set encoding=utf-8			"Codificacion utf8
-	set shiftwidth=4			"Tabulador de 4 espacios
+	set shiftwidth=4			"Tabulador de 4 esp"acios
 	set tabstop=4				"Tab 4
 	set expandtab				"Identacion automatica
 	set autoindent				"
@@ -84,13 +81,3 @@ NeoBundleCheck
     " If you want :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
 
-" This is new style
-call deoplete#custom#var('omni', 'input_patterns', {
-      \ 'tex': g:vimtex#re#deoplete
-      \})
-" settings for sumatraPDF
-let g:vimtex_view_general_viewer = 'zathura'
-let g:vimtex_view_general_options
-    \ = '-reuse-instance -forward-search @tex @line @pdf'
-let g:vimtex_view_general_options_latexmk = '-reuse-instance'
-let g:vimtex_compiler_progname = 'nvr'
