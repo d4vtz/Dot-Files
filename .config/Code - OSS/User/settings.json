@@ -58,4 +58,13 @@
     ],
     "cSpell.language": ",es",
     "latex-workshop.latex.recipe.default": "lastUsed",
+    "python.languageServer": "Microsoft",
+    "terminal.integrated.rendererType": "dom",
+    "editor.minimap.enabled": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "cSpell.userWords": [
+        "clipboard",
+        "pyperclip",
+        "self"
+    ],
 }

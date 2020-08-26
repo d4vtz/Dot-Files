@@ -4,40 +4,40 @@ import sys
 import dbus
 import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument(
+analizador = argparse.ArgumentParser()
+analizador.add_argument(
     '-t',
     '--trunclen',
     type=int,
     metavar='trunclen'
 )
-parser.add_argument(
+analizador.add_argument(
     '-f',
     '--format',
     type=str,
     metavar='custom format',
     dest='custom_format'
 )
-parser.add_argument(
+analizador.add_argument(
     '-p',
     '--playpause',
     type=str,
     metavar='play-pause indicator',
     dest='play_pause'
 )
-parser.add_argument(
+analizador.add_argument(
     '--font',
     type=str,
     metavar='the index of the font to use for the main label',
     dest='font'
 )
-parser.add_argument(
+analizador.add_argument(
     '--playpause-font',
     type=str,
     metavar='the index of the font to use to display the playpause indicator',
     dest='play_pause_font'
 )
-parser.add_argument(
+analizador.add_argument(
     '-q',
     '--quiet',
     action='store_true',
@@ -45,11 +45,11 @@ parser.add_argument(
     dest='quiet',
 )
 
-args = parser.parse_args()
+args = analizador.parse_args()
 
 
 def fix_string(string):
-    # corrects encoding for the python version used
+    # Retorna un string con la codificación correcta
     if sys.version_info.major == 3:
         return string
     else:
@@ -57,10 +57,11 @@ def fix_string(string):
 
 
 def truncate(name, trunclen):
+    # Truncar string a trunclen
     if len(name) > trunclen:
         name = name[:trunclen]
         name += '...'
-        if ('(' in name) and (')' not in name):
+        if '(' in name and ')' not in name:
             name += ')'
     return name
 
@@ -68,7 +69,7 @@ def truncate(name, trunclen):
 
 # Default parameters
 output = fix_string(u'{play_pause} {artist}: {song}')
-trunclen = 45
+trunclen = 60
 play_pause = fix_string(u'\u25B6,\u23F8') # first character is play, second is paused
 
 label_with_font = '%{{T{font}}}{label}%{{T-}}'
@@ -136,6 +137,6 @@ try:
 
 except Exception as e:
     if isinstance(e, dbus.exceptions.DBusException):
-        print('')
+        print('  Spotify')
     else:
         print(e)

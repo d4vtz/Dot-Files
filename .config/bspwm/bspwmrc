@@ -17,6 +17,7 @@
 #-------------------------------------------------------------
 #Para que funciones aplicaciones en java
 export _JAVA_AWT_WM_NONREPARENTING=1
+
 #Demonio de teclas
 sxhkd &
 
@@ -37,22 +38,10 @@ picom &
 
 #Iniciar demonios de notificaciones
 dunst &
-ntfd &
 
 #Demonio de musica en terminal
 mpd &
 
-#Dock
-plank &
-
-#portapapeles
-copyq &
-
-#mega
-#megasync &
-
-#Dropbox
-dropbox &
 			#Scripts de inicio
 #-----------------------------------------------------------
     #Panel de polybar
@@ -61,6 +50,8 @@ $HOME/.config/polybar/launch.sh &
 #Fuente de colores
 . "${HOME}/.cache/wal/colors.sh" &
 
+#portapapeles
+#$HOME/.scripts/mclip.py deamon &
 
 
 		#Configuracion de BSPWM
@@ -74,10 +65,10 @@ bspc monitor -d Home Web Code Pdf Music Multimedia Social Sistem
 bspc config normal_border_color '$color4'
 
 #Color de la ventana activa
-bspc config active_border_color '$color6'
+bspc config active_border_color '$color2'
 
 #Color de la ventana enfocada
-bspc config focused_border_color '$color15'
+bspc config focused_border_color '$color2'
 
 #Color de preselección
 bspc config presel_feedback_color '$color1' 
@@ -143,7 +134,7 @@ bspc rule -a code-oss desktop=\Code border=off
 			#Math
 bspc rule -a Evince desktop=\Math
 			#Music
-bspc rule -a Spotify desktop=\Music
+bspc rule -a spotify desktop=\Music
 bspc rule -a ncmpcpp desktop=\Music
 			#Social
 bspc rule -a TelegramDesktop desktop=\Social

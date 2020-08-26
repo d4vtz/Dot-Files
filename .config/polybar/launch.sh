@@ -11,6 +11,5 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # bar top
 polybar -c ~/.config/polybar/top.ini top &
 # bar down
-polybar -c ~/.config/polybar/down-left.ini down-left &
-polybar -c ~/.config/polybar/down-right.ini down-right &
+polybar -c ~/.config/polybar/down.ini down &
 

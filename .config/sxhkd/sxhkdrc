@@ -25,8 +25,8 @@ alt + w
 
 #Terminal
 super + Return
-#    termite
     alacritty
+
 #Editor de texto
 alt + g
 	code
@@ -55,9 +55,9 @@ alt + p
 alt + t
     ~/.scripts/ocultar_ventana TelegramDesktop telegram-desktop
     
-#Ocultar Spotify
+#Spotify
 alt + s
-    ~/.scripts/ocultar_ventana Spotify spotify
+    ~/.scripts/spotify.py
 
 #Cambiar el wallpaper y colores de la paleta
 super + Home
@@ -65,11 +65,11 @@ super + Home
 
 #Menu para cerrar sesión, reiniciar, bloquear, apagar
 super + End
-   ~/.scripts/powermenu.sh
+   ~/.scripts/apagar.py
 
 #Portapapeles
 super + x
-    ~/.scripts/portapapeles.sh
+    rofi -modi "clipboard:mclip.py menu" -show clipboard && mclip.py paste
 
 #Buscador de pdfs
 ctrl + alt + p
@@ -130,7 +130,7 @@ alt + {Prior,Next}
 
 
 ###############################################################
-########   Mover y cambiar de tamaño Ventanas   ###############
+########   Mover y cambiar de tamaño Ventanas   ###############
 ###############################################################
 #Expand/contract a window by moving one of its side outward/inward
 super + z : {Left,Down,Up,Right}
@@ -175,15 +175,15 @@ super + shift + {Prior,Next}
 
 #Subir Volumen
 XF86AudioRaiseVolume
-    ~/.scripts/pulseaudio.sh -Subir
+    ~/.scripts/pulseaudio.py -Subir
 
 #Bajar volumen
 XF86AudioLowerVolume
-    ~/.scripts/pulseaudio.sh -Bajar
+    ~/.scripts/pulseaudio.py -Bajar
 
 #Mute
 XF86AudioMute
-    ~/.scripts/pulseaudio.sh -Silencio
+    ~/.scripts/pulseaudio.py -Silencio
     
 #Screenshot
 Print + {_, super}

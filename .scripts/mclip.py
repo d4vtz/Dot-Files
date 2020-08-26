@@ -11,7 +11,7 @@ from sys import argv
 
 # Settings
 CLIP_LIMIT = 200             # number of clipboard history
-HISTORY_FILE = os.environ['HOME'] + '/.clipboard-history'
+HISTORY_FILE = os.environ['HOME'] + '/.clipboard_history'
 CLIP_FILE = os.environ['HOME'] + '/.clipboard'
 STRING_LIMIT = 200
 HELP = '''./mclip.py menu|daemon'''
