@@ -36,6 +36,7 @@ CARPETAS = [
     '/.zshrc',
 ]
 
+
 if __name__ == '__main__':
     print('  ------------------------------------------------------  ')
     print('    Script de instalación de mi configuración de BSPWM    ')
@@ -66,13 +67,3 @@ if __name__ == '__main__':
     print('  ------------------------------------------------------------  ')
     print('    Finalización de instalación de mi configuración de BSPWM    ')
     print('  ------------------------------------------------------------  ')
-
-
-
-
-'''
-
-echo "------------------------------------------------------------"
-echo "  Finalización de instalación de mi configuración de BSPWM  "
-echo "------------------------------------------------------------"
-'''
