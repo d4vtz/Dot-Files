@@ -3,7 +3,7 @@ from os import path, environ, mkdir, getcwd, symlink
 from time import sleep
 
 HOME = environ['HOME']
-CONFIG = HOME + '/Prueba/.config'
+CONFIG = HOME + '/.config'
 DOTFILES = getcwd()
 
 CARPETAS = [
