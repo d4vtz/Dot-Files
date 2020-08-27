@@ -1,5 +1,5 @@
 #!/bin/env python
-from subprocess import PIPE, DEVNULL, run, Popen
+from subprocess import PIPE, DEVNULL, run
 from time import sleep
 
 PACMAN = ['checkupdates']
@@ -21,9 +21,10 @@ def hay_kernel():
     sleep(2)
     lista = str(update.stdout).split()
     for elemento in lista:
-        if elemento == 'linux-zen':
+        if elemento.find('linux-zen') >= 0:
             return True
-
+        
+        
 
 pacman = contar(PACMAN)
 aur = contar(AUR)
