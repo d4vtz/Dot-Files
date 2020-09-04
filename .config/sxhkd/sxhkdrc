@@ -175,15 +175,15 @@ super + shift + {Prior,Next}
 
 #Subir Volumen
 XF86AudioRaiseVolume
-    ~/.scripts/pulseaudio.py -Subir
+    ~/.scripts/pulseaudio.py -Subir ; tail -f /tmp/xobpipe | xob  
 
 #Bajar volumen
 XF86AudioLowerVolume
-    ~/.scripts/pulseaudio.py -Bajar
+    ~/.scripts/pulseaudio.py -Bajar ; tail -f /tmp/xobpipe | xob  
 
 #Mute
 XF86AudioMute
-    ~/.scripts/pulseaudio.py -Silencio
+    ~/.scripts/pulseaudio.py -Silencio ; tail -f /tmp/xobpipe | xob  
     
 #Screenshot
 Print + {_, super}

@@ -31,7 +31,7 @@ setxkbmap -layout latam &
 wal -R
 
 #Matar procesos al iniciar bspwm
-killall picom dunst redshift dockx megasync dropbox ntfd 
+killall picom dunst redshift glava
 
 #Iniciar compocitor
 picom &
@@ -41,6 +41,7 @@ dunst &
 
 #Demonio de musica en terminal
 mpd &
+
 
 			#Scripts de inicio
 #-----------------------------------------------------------
