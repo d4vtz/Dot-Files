@@ -4,6 +4,7 @@ from subprocess import Popen, PIPE
 lista = [
     '             Bloquear',
     '             Salir',
+    '             Hibernar',
     '             Reiniciar',
     '             Apagar'
 ]
@@ -41,3 +42,5 @@ elif respuesta == 'Reiniciar':
     Popen('reboot')
 elif respuesta == 'Apagar':
     Popen('poweroff')
+elif respuesta == 'Hibernar':
+    Popen(['systemctl', 'hibernate'])

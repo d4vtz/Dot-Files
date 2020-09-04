@@ -8,56 +8,65 @@
 #   -Silencio
 #   -Subir
 #   -Bajar
+#   -Polybar
 
-
-from subprocess import PIPE, Popen, run 
 from sys import argv
+from pulsectl import Pulse
+from subprocess import PIPE, DEVNULL, Popen
 
+XOBPIPE = '/tmp/xobpipe'
 AUDIFONOS = 'analog-output-headphones'
 ALTAVOCES = 'analog-output-speaker'
+SINK_ID = 0
 
 
-def grep(palabra_clave, numero_palabra):
-    pactl = Popen(['pactl', 'list', 'sinks'], stdout=PIPE)
-    grep = Popen(['grep', palabra_clave], stdin=pactl.stdout, stdout=PIPE)
-    pactl.stdout.close()
-    return grep.stdout.read().decode().split()[numero_palabra-1]
+def datos(entrada):
+    xob = open(XOBPIPE, 'w')
+    xob.write(entrada + '\n')
+    xob.close()
 
 
-def hay_sonido():
-    if grep('Silencio', 2) == 'no':
-        return True
-    else:
-        return False
 
+if __name__ == '__main__':
+    pulse = Pulse()
+    sink = pulse.sink_list()[SINK_ID]
+    puerto_activo = sink.port_active.name
+    volumen = round(sink.volume.value_flat * 100)
+    hay_mute = sink.mute == 1
 
-def parametros():
-    if argv[1] == '-Puerto':
-        if grep('Puerto Activo', 3) == ALTAVOCES:
-            run(['pacmd', 'set-sink-port', '0', AUDIFONOS], stdout=PIPE)
-        else:
-            run(['pacmd', 'set-sink-port', '0', ALTAVOCES], stdout=PIPE)
-
-    elif argv[1] == '-Silencio':
-        run(['amixer', 'set', 'Master', 'toggle'], stdout=PIPE)
-
-    elif argv[1] == '-Subir':
-        run(['amixer', 'set', 'Master', '5%+'], stdout=PIPE)
-
-    elif argv[1] == '-Bajar':
-        run(['amixer', 'set', 'Master', '5%-'], stdout=PIPE)
-
-
-def main():
     if len(argv) == 2:
-        parametros()
-    if hay_sonido:
-        if grep('Puerto Activo', 3) == ALTAVOCES:
-            print('   {}'.format(grep('Volumen', 5)))
-        else:
-            print('   {}'.format(grep('Volumen', 5)))
-    else:
-        print('Mute')
+        if argv[1] == '-Puerto':
+            if puerto_activo == ALTAVOCES:
+                pulse.port_set(sink, AUDIFONOS)
+            else:
+                pulse.port_set(sink, ALTAVOCES)
 
+        elif argv[1] == '-Silencio':
+            if hay_mute:
+                pulse.mute(sink, mute=False)
+                datos('!')
 
-main()
+            else:
+                pulse.mute(sink)
+                datos('')
+
+        elif argv[1] == '-Subir':
+            if volumen < 150:
+                pulse.volume_change_all_chans(sink, +0.05)
+                volumen = round(sink.volume.value_flat * 100)
+                datos(str(volumen))
+
+        elif argv[1] == '-Bajar':
+            pulse.volume_change_all_chans(sink, -0.05)
+            volumen = round(sink.volume.value_flat * 100)
+            datos(str(volumen))
+
+        elif argv[1] == '-Polybar':
+            volumen = round(sink.volume.value_flat * 100)
+            if not hay_mute:
+                if puerto_activo == ALTAVOCES:
+                    print('   {}%'.format(volumen))
+                else:
+                    print('   {}%'.format(volumen))
+            else:
+                print('Mute')
