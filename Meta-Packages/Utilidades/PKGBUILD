@@ -1,0 +1,46 @@
+
+#Maintainer:MedicenDav
+pkgname=Utilidades
+pkgver=2020.08.29
+pkgrel=1.0
+pkgdesc='Meta-package para la instalación de mis fuentes'
+arch=('any')
+license=('none')
+depends=(
+    'alacritty',
+    'bat',
+    'bspwm',
+    'code',
+    'dunst',
+    'feh',
+    'google-chrome',
+    'gotop',
+    'lsd',
+    'lxappearance-gtk3',
+    'mpv',
+    'neovim-plug',
+    'picom-ibhagwan-git',
+    'pipes.sh',
+    'playerctl',
+    'polybar',
+    'ranger',
+    'rofi',
+    'ruby-neovim',
+    'screenkey',
+    'scrot',
+    'streamlink',
+    'spotify',
+    'spotify-adblock-git',
+    'sxhkd',
+    'telegram-desktop',
+    'thunar',
+    'thunar-archive-plugin',
+    'thunar-media-tags-plugin',
+    'thunar-volman',
+    'unimatrix-git',
+    'vlc',
+    'virtualbox',
+    'zathura',
+    'zathura-djvu',
+    'zathura-pdf-mupdf'
+)
