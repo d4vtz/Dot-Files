@@ -1,0 +1,43 @@
+#Maintainer:MedicenDav
+pkgname=Paquetes-Base
+pkgver=2020.08.29
+pkgrel=1.0
+pkgdesc='Meta-package para la instalación base de mi Arch.'
+arch=('any')
+license=('none')
+depends=(
+    'aic94xx-firmware',
+    'alsa',
+    'alsa-plugins',
+    'alsa-utils',
+    'amd-ucode',
+    'base',
+    'base-devel',
+    'cpupower',
+    'cmake',
+    'git',
+    'pacman-contrib',
+    'pulseaudio',
+    'pulseaudio-alsa',
+    'python-dbus',
+    'python-pip',
+    'python-pynvim',
+    'python-pywal',
+    'python2-pip',
+    'thermald',
+    'update-grub',
+    'vulkan-radeon',
+    'wd719x-firmware',
+    'xclip',
+    'xsel',
+    'xf86-input-synaptics',
+    'xorg',
+    'xorg-server',
+    'xorg-init',
+    'yay',
+    'zsh',
+    'zsh-autosuggestions',
+    'zsh-completions',
+    'zsh-doc',
+    'zsh-syntax-highlighting'
+)

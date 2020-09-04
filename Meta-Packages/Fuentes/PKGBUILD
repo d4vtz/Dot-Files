@@ -1,0 +1,31 @@
+#Maintainer:MedicenDav
+pkgname=Fuentes
+pkgver=2020.08.29
+pkgrel=1.0
+pkgdesc='Meta-package para la instalación de mis fuentes'
+arch=('any')
+license=('none')
+depends=(
+    'adobe-source-han-sans-cn-fonts',
+    'adobe-source-han-sans-jp-fonts',
+    'adobe-source-han-sans-kr-fonts',
+    'adobe-source-sans-pro-fonts',
+    'nerd-fonts-hack',
+    'nerd-fonts-iosevka',
+    'noto-fonts',
+    'noto-fonts-extra',
+    'noto-fonts-tc',
+    'ttf-anonymous-pro',
+    'ttf-caladea',
+    'ttf-croscore',
+    'ttf-fira-mono',
+    'ttf-fira-sans',
+    'ttf-inconsolata',
+    'ttf-iosevka',
+    'ttf-lato',
+    'ttf-liberation',
+    'ttf-opensans',
+    'ttf-roboto',
+    'ttf-roboto-mono',
+    'ttf-ubuntu-font-family'
+)
