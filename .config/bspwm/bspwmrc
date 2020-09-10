@@ -28,10 +28,10 @@ xsetroot -cursor_name left_ptr &
 setxkbmap -layout latam &
 
 #Fijar colores y tema de mi terminal y wm
-wal -R
+wal -R 
 
 #Matar procesos al iniciar bspwm
-killall picom dunst redshift glava
+killall picom dunst mpd redshift
 
 #Iniciar compocitor
 picom &
@@ -42,17 +42,30 @@ dunst &
 #Demonio de musica en terminal
 mpd &
 
+#Demonio que controla la temperatura de la pantalla
+redshift &
+
+#Administrador de Energía
+xfce4-power-manager &
+
+#Administrador de archivos
+thunar --daemon &
+
 
 			#Scripts de inicio
 #-----------------------------------------------------------
     #Panel de polybar
-$HOME/.config/polybar/launch.sh &
+$HOME/.scripts/lanzar_polybar.py 
 
 #Fuente de colores
 . "${HOME}/.cache/wal/colors.sh" &
 
 #portapapeles
-#$HOME/.scripts/mclip.py deamon &
+$HOME/.scripts/mclip.py deamon &
+
+#Bloquear pantalla
+$HOME/.scripts/bloquear_pantalla.py
+
 
 
 		#Configuracion de BSPWM
