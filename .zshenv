@@ -6,7 +6,7 @@ export SCRIPTS=$CONFIG/scripts
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export TERMINAL=/usr/bin/alacritty
 export LFS=/mnt/lfs
-
+export EDITOR=nvim
 
 
 if [ -n "$DESKTOP_SESSION" ];then

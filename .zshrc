@@ -165,7 +165,7 @@ HISTFILE=/home/medicendav/.zsh_history
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 alias ll='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
-alias cat='bat --paging=never'
+alias bat='bat --paging=never'
 
 
 #"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -182,8 +182,6 @@ alias bye='pkill -KILL -u medicendav'
 alias rmc='rm -r'
 alias cpr='cp-r'
 alias class='xprop WM_CLASS'
-alias brillo='./.config/scripts/brillo.sh'
-alias wpa='sudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf'
 
 
 alias vim='nvim'
