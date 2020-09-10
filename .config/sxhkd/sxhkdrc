@@ -179,7 +179,7 @@ XF86AudioRaiseVolume
 
 #Bajar volumen
 XF86AudioLowerVolume
-    ~/.scripts/pulseaudio.py -Bajar ; tail -f /tmp/xobpipe | xob  
+    ~/.scripts/pulseaudio.py -Bajar ; tail -f /tmp/xobpipe | xob 
 
 #Mute
 XF86AudioMute
