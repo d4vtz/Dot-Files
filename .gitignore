@@ -1,3 +1,3 @@
 # Archivos sin seguimiento
-
+.scripts/wmutils/__pycache__/
 .config/polybar/gmail/credentials.json
