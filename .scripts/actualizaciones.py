@@ -1,36 +1,34 @@
-#!/bin/env python
-from subprocess import PIPE, DEVNULL, run
+#!/usr/bin/env python
+from wmutils.procesos import  execute
 from time import sleep
 
-PACMAN = ['checkupdates']
-AUR = ['yay', '-Qum']
+PACMAN = 'checkupdates'
+AUR = 'yay -Qum'
 
 
 def contar(tipo):
-    update = run(tipo, stdout=PIPE, stderr=DEVNULL)
-    sleep(3)
-    lista = str(update.stdout).split()
+    lista = execute(tipo)
     contador = 0
-    for elemento in lista:
-        if elemento == '->':
-            contador += 1
-    return contador
+    hay_kernel = False
 
-def hay_kernel():
-    update = run(PACMAN, stdout=PIPE, stderr=DEVNULL)
-    sleep(2)
-    lista = str(update.stdout).split()
     for elemento in lista:
-        if elemento.find('linux-zen') >= 0:
-            return True
-        
+        if '->' in elemento.split():
+            contador += 1
+        elif elemento.find('linux-zen') >= 0:
+            hay_kernel = True
+    if hay_kernel:
+        return True
+    else:
+        return contador
         
 
 pacman = contar(PACMAN)
 aur = contar(AUR)
 
 
-if not hay_kernel():
+if pacman:
+    print('Kernel Update')
+else:
     total = pacman + aur
     if total == 0:
         print('Sin actualizaciones')
@@ -40,5 +38,4 @@ if not hay_kernel():
         print(total)
     else:
         print('{} --> AUR: {}'.format(total, aur))
-else:
-    print('Kernel Update')
+    

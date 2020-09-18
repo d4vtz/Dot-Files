@@ -1,14 +1,11 @@
 #!/usr/bin/env python
+from wmutils.procesos import cmd_output
 
-from subprocess import PIPE, DEVNULL, Popen
-from  notify2 import init, Notification
-from time import sleep
 
 class Bateria:
 
     def __init__(self):
-        acpi = Popen(['acpi', '-b'], stdout=PIPE)
-        self.estado = acpi.stdout.read().decode().split()
+        self.estado = cmd_output('acpi -b').split()
     
     def carga(self):
         return int(self.estado[3][:-2])
@@ -17,10 +14,10 @@ class Bateria:
         return self.estado[2][:-1] == 'Charging'
     
     def esta_cargada(self):
-        return self.estado[2][:-1] == 'Unknown'
+        return self.estado[2][:-1] == 'Full'
 
     def estado_critico(self):
-        return self.carga() <= 15
+        return self.carga() < 10
 
     def nivel(self):
         if 80 <= self.carga() < 100:
@@ -35,9 +32,7 @@ class Bateria:
             return 0
         else:
             return 5
-    
-    def hibernar(self):
-        Popen(['systemctl', 'hibernate'])
+
 
 
 imagen = ['', '', '', '', '', '']

@@ -1,18 +1,13 @@
 #!/bin/env python
-
-from Busqueda import Busqueda
-
+from wmutils.procesos import cmd_output, rofi
+from Busqueda import escanear
 
 RUTA = '/home/medicendav/Documentos/Biblioteca/'
-EXTENSIONES = [
-        '.pdf',
-        '.djvu'
-        ]
+EXTENSIONES = ['.pdf', '.djvu']
 
-ruta = Busqueda.buscar(EXTENSIONES, RUTA, 'Buscar libro')
 
-zathura = [
-        'zathura',          # Visualizador de documentos
-        ruta                # Cadena de texto con la ruta a ejecutar
-        ]
-ejecutar = Busqueda.Shell(zathura)
+if __name__ == '__main__':
+
+        resultados = escanear(EXTENSIONES, RUTA)
+        ruta_pdf = rofi(resultados, 'Selecciona un libro')
+        cmd_output(f'zathura {ruta_pdf}')

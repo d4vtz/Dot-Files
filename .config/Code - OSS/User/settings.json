@@ -4,6 +4,7 @@
     "workbench.colorTheme": "Material Theme",
     "editor.fontFamily": "'Iosevka Nerd Font'",
     "editor.fontSize": 12,
+    "python.envFile": ".env",
     "latex-workshop.view.pdf.backgroundColor": "#000000",
     "latex-workshop.view.pdf.invert": 1,
     "workbench.panel.defaultLocation": "right",
@@ -67,4 +68,5 @@
         "pyperclip",
         "self"
     ],
+    "window.zoomLevel": 0,
 }

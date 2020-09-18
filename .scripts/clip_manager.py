@@ -2,77 +2,64 @@
 from os import environ
 import pyperclip as clipboard
 from sys import argv
-from subprocess import Popen, PIPE
+from wmutils.procesos import rofi_lista
 
 HISTORIAL = environ['HOME'] + '/.clipboard-historial'
+CLIPS_MAX = 30
+CLIP_LONG_MAX = 50
 
 class Clip_Manager:
 
     def __init__(self):
-        open(HISTORIAL, "w+").close()
-    
-    def clip_rofi(self):
+        self.clips = []
 
-        cadena = ''
-        for clip in self.lectura():
-            cadena += clip + '\n'
-        cadena = cadena[:-1]
-
-        echo = [
-            'echo',
-            '-e',
-            cadena
-            ]
-
-        rofi = [
-            'rofi',
-            '-lines', '10',
-            '-width', '50',
-            '-location', '0',
-            '-dmenu',
-            '-p', 'Clip Manager'
-            ]
-
-        Echo = Popen(echo, stdout=PIPE)
-        Rofi = Popen(rofi, stdin=Echo.stdout, stdout=PIPE)
-        Echo.stdout.close()
-
-        return Rofi.stdout.read().decode()[:-1]
-        
-    def copiar(self):
-        texto = self.clip_rofi()
-        clipboard.copy(texto)
-    
     def lectura(self):
-        contenido = []
-        with open(HISTORIAL, 'r') as historial:
-            for linea in historial.readlines():
-                contenido.append(linea)
-        return contenido
+        try:
+            with open(HISTORIAL, 'r') as historial:
+                contenido = historial.read()
+                historial.close()
+            return contenido.split('\n')
+        except:
+            return []
 
-    def escritura(self, texto):
-        with open(HISTORIAL, 'w+') as historial:
-            if len(texto) == 1:
-                historial.write('\n'.join(texto))
-            else:
-                historial.write(texto[0])
+    def copiar(self):
+        contenido = self.lectura()[:-1]
+        eleccion = rofi_lista(contenido, 'Clip Manager')
+        clipboard.copy(eleccion)
+
+    def escritura(self, clip):
+        
+        self.clips.reverse()
+        self.clips.append(clip)
+        self.clips.reverse()
+        
+        with open(HISTORIAL, 'w') as historial:
+            for clip in self.clips:
+                if len(clip) > 0:
+                    historial.write(clip + '\n')
+            historial.close()
 
     def demonio(self):
         while True:
+            clips_historial = self.lectura()
+
+            if CLIPS_MAX >= len(clips_historial) > 0:
+                self.clips = clips_historial            
+            elif len(clips_historial) > CLIPS_MAX:
+                self.clips = clips_historial[:CLIPS_MAX]
+
             clip = clipboard.paste()
-            clips = self.lectura()
-            if clip not in clips:
-                clips.append(clip)
-                clips.reverse()
-                self.escritura(clips)
+            
+            if not clip in self.clips and len(clip) < CLIP_LONG_MAX:
+                self.escritura(clip)
+            self.clips = []
 
 
-
-
-clip = Clip_Manager()
-if argv[1] == '-Demonio':
-    clip.demonio()
-
-elif argv[1] == '-Copiar':
-    #clip.copiar()
-    print(clip.lectura())
+if __name__ == '__main__':
+    
+    clip = Clip_Manager()
+    
+    if argv[1] == '-Demonio':
+        clip.demonio()
+    elif argv[1] == '-Copiar':
+        clip.copiar()

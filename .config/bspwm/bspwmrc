@@ -61,7 +61,7 @@ $HOME/.scripts/lanzar_polybar.py
 . "${HOME}/.cache/wal/colors.sh" &
 
 #portapapeles
-$HOME/.scripts/mclip.py deamon &
+$HOME/.scripts/clip_manager.py -Demonio &
 
 #Bloquear pantalla
 $HOME/.scripts/bloquear_pantalla.py

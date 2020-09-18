@@ -9,7 +9,7 @@
 
 #Recargar config de sxhkd
 super + shift + r
-    	pkill -USR1 -x sxhkd && notify-send 'Recargada la configuración de sxhkd'
+    pkill -USR1 -x sxhkd && notify-send 'Recargada la configuración de sxhkd'
 
 #Recargar config de bspwm
 super + alt + r
@@ -69,12 +69,17 @@ super + End
 
 #Portapapeles
 super + x
-    rofi -modi "clipboard:mclip.py menu" -show clipboard && mclip.py paste
+    ~/.scripts/clip_manager.py -Copiar
 
 #Buscador de pdfs
 ctrl + alt + p
  ~/.scripts/buscar_pdf.py
 
+ctrl + k
+    ~/.scripts/wm_class.py -hidden
+
+shift + {Next, Prior}
+    ~/.scripts/ocultar_ventana.py {-ocultar, -listar_ventanas_ocultas}
 
 ###############################################################
 ###########	 Configuracion de las ventanas   ##############
