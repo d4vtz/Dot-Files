@@ -4,6 +4,9 @@
 
 
 
+
+
+
 #		Aplicar esquema de colores de pywal
 #################################################################
 export TERM=xterm-256color
