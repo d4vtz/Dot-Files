@@ -1,7 +1,7 @@
 {
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Material Theme",
+    "workbench.colorTheme": "Material Theme Darker",
     "editor.fontFamily": "'Iosevka Nerd Font'",
     "editor.fontSize": 12,
     "python.envFile": ".env",
@@ -69,4 +69,7 @@
         "self"
     ],
     "window.zoomLevel": 0,
+    "workbench.iconTheme": "material-icon-theme",
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.enabled": true,
 }
