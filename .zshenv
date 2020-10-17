@@ -1,4 +1,4 @@
-export PYTHONPATH="${PYTHONPATH}"
+export PYTHONPATH="${PYTHONPATH}:${HOME}/.scripts"
 export TERM=xterm-256color
 export PATH="${PATH}:${HOME}/.local/bin/:${HOME}/.config/scripts/:/usr/local/texlive/2020/bin/x86_64-linux"
 export CONFIG=$HOME/.config

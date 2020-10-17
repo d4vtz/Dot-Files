@@ -1,11 +1,11 @@
 
 
-#	Mi configuracion de sxhkd
-		#	CallmeDav
-		
-######################################################
-# #Atajos a los archivos de config de bspwm y sxhkd ##
-######################################################
+##	Mi configuracion de sxhkd
+##		CallmeDav
+
+##########################################################
+##   Atajos a los archivos de config de bspwm y sxhkd   ##
+##########################################################
 
 #Recargar config de sxhkd
 super + shift + r
@@ -13,7 +13,7 @@ super + shift + r
 
 #Recargar config de bspwm
 super + alt + r
-	bspc wm -r && notify-send 'Recargada la configuracion de bspwm'
+    bspc wm -r && notify-send 'Recargada la configuracion de bspwm'
 
 #########################################################
 ######	     #Aplicaciones más usdas     ################
@@ -29,7 +29,7 @@ super + Return
 
 #Editor de texto
 alt + g
-	code
+    code
 
 #Administrador de archivos
 alt + f
@@ -45,7 +45,7 @@ alt + n
 
 #Menu de aplicaciones Rofi
 super + shift + Return
-	rofi -modi ssh,run,window,drun -sidebar-mode -show-icons -show drun
+    rofi -modi ssh,run,window,drun -sidebar-mode -show-icons -show drun
 
 #Lector de pdf
 alt + p
@@ -61,11 +61,11 @@ alt + s
 
 #Cambiar el wallpaper y colores de la paleta
 super + Home
-   ~/.scripts/Temas/cambiar_tema.py 
+    ~/.scripts/Temas/cambiar_tema.py 
 
 #Menu para cerrar sesión, reiniciar, bloquear, apagar
 super + End
-   ~/.scripts/apagar.py
+    ~/.scripts/apagar.py
 
 #Portapapeles
 super + x
@@ -73,13 +73,11 @@ super + x
 
 #Buscador de pdfs
 ctrl + alt + p
- ~/.scripts/buscar_pdf.py
+    ~/.scripts/buscar_pdf.py
 
-ctrl + k
-    ~/.scripts/wm_class.py -hidden
-
+#Ocultar ventana
 shift + {Next, Prior}
-    ~/.scripts/ocultar_ventana.py {-ocultar, -listar_ventanas_ocultas}
+    ~/.scripts/ocultar_ventana.py {--ocultar, --listar}
 
 ###############################################################
 ###########	 Configuracion de las ventanas   ##############
@@ -87,61 +85,52 @@ shift + {Next, Prior}
 
 #Cerrar ventanas
 super + q
-	bspc node -c
+    bspc node -c
 
 #Ventana fullscreen
 super + shift + f
-	bspc desktop -l next
+    bspc desktop -l next
 
 #Estado de la ventana
 super + shift + {i,o,p}
-    	bspc node -t {tiled,floating,fullscreen}
+    bspc node -t {tiled,floating,fullscreen}
 
-# Cambiar posicion de la ventana
+#Cambiar posicion de la ventana
 super + shift + {Left,Down,Up,Right}
-    	bspc node -s {west,south,north,east}
+    bspc node -s {west,south,north,east}
 
-# Moverse entre nodos
+#Moverse entre nodos
 alt + {Left,Down,Up,Right}
-	bspc node -f {west,south,north,east}
-
+    bspc node -f {west,south,north,east}
 
 #Moverse entre Workspaces
 super + {Prior,Next}
-    	bspc desktop -f {prev,next}.local
+    bspc desktop -f {prev,next}.local
 
 #Moverse entre Workspaces ocupados
 super + {Left,Right}
-  	bspc desktop -f {prev,next}.occupied.local
-
+    bspc desktop -f {prev,next}.occupied.local
 
 #Cambiar al ultimo WorkSpaces
 super + Tab
-    	bspc desktop -f last
+    bspc desktop -f last
 
 #Enviar ventanas a diferentes WorkSpaces
 super + {_,shift + }{1-8}
     bspc {desktop -f,node -d} '^{1-9,10}' --follow
 
-
-# Cambiar el tamaño de las gaps 
-#super + alt + button{4,5}
+#Cambiar el tamaño de las gaps 
 super + z + {Up,Down}
     bspc config window_gap $(( $(bspc config window_gap) {-,+} 5 ))
 
 #Rotar las ventanas 90°
 alt + {Prior,Next}
-	bspc node @parent -R {-90,90}
+    bspc node @parent -R {-90,90}
 
 
 ###############################################################
 ########   Mover y cambiar de tamaño Ventanas   ###############
 ###############################################################
-#Expand/contract a window by moving one of its side outward/inward
-super + z : {Left,Down,Up,Right}
-    STEP=20; SELECTION={4,3,2,1}; \
-    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
-    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
 
 #Expandir ventanas desde la derecha
 super + alt + {Left,Down,Up,Right}
@@ -157,20 +146,17 @@ ctrl + {Left,Down,Up,Right}
 
 #Dirección de preselección 
 super + ctrl + {Left,Down,Up,Right}
-	bspc node -p {west,south,north,east}
+    bspc node -p {west,south,north,east}
 
 #Radio de preselección
 super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-
-super + l
-    bspc node -n last.!automatic
+    bspc node -o 0.{1-9}
 
 #Cancelación de preselección
 ctrl + Return
-	bspc node -p cancel
+    bspc node -p cancel
 
-# Rotar arbol de ventanas
+#Rotar arbol de ventanas
 super + shift + {Prior,Next}
     bspc node @/ -C {forward,backward}
     
@@ -194,3 +180,12 @@ XF86AudioMute
 Print + {_, super}
     ~/.scripts/screen.sh {-screen, -retraso}
 
+
+
+# Remove current tab from tabbed
+super + t
+        ~/.scripts/tab.sh $(bspc query -N -n focused) remove
+
+# At given direction: join two windows into a new tabbed or add window to an existing tabbed
+super + {v,b,n,m}
+        ~/.scripts/tab.sh $(bspc query -N -n {west,south,north,east}) add $(bspc query -N -n focused)

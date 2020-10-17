@@ -34,7 +34,7 @@ wal -R
 killall picom dunst mpd redshift
 
 #Iniciar compocitor
-picom &
+picom --experimental-backend &
 
 #Iniciar demonios de notificaciones
 dunst &

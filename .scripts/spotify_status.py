@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/medicendav/Dotfiles/.scripts/env/bin/python
 
 import sys
 import dbus

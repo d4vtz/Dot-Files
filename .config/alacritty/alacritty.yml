@@ -63,8 +63,11 @@ window:
   startup_mode: Windowed
 
   # Window title
-  title: Alacritty
-
+  #title: Alacritty
+  
+  #Titulo dinamico
+  dynamic_title: true
+  
   # Window class (Linux/BSD only):
   class:
     # Application instance name
@@ -315,7 +318,7 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-        program: /bin/bash
+        program: /bin/zsh
         args:
         - --login
 

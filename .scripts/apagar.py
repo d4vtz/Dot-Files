@@ -1,13 +1,19 @@
 #!/usr/bin/env python
-from wmutils.procesos import  cmd_output, rofi
 
+#  Autor: MedicenDav
+#  Dotfiles: github.com/medicendav/Dotfiles
+
+from wmutils.procesos import cmd_output, rofi
+
+# Diccionario con los comandos a ejecutar
 opciones = {
-    '         Bloquear'  : 'i3lock-fancy',
-    '         Salir'     : 'bspc quit',
-    '         Hibernar'  : 'systemctl hibernate',
-    '         Reiniciar' : 'reboot',
-    '         Apagar'    : 'poweroff'
+    'i3lock-fancy': '         Bloquear',
+    'bspc quit': '         Salir',
+    'systemctl hibernate': '         Hibernar',
+    'reboot': '         Reiniciar',
+    'poweroff': '         Apagar'
     }
- 
+
+# Lanzar rofi para elegir la opción.
 respuesta = rofi(opciones, '¿Desea salir?', len(opciones), 20)
 cmd_output(respuesta)

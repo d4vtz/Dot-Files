@@ -2,7 +2,7 @@
 from subprocess import Popen, run, PIPE, DEVNULL
 
 
-def cmd_output(cmd):
+def cmd_output(cmd: str) -> str:
     output = run(
              cmd,
              stdout=PIPE,
@@ -12,26 +12,11 @@ def cmd_output(cmd):
     )
     if output.returncode == 0:
         return output.stdout[:-1]
-        #return popen.stdout[:-1].split('\n')
     else:
         return ''
 
 
-def execute(cmd):
-    popen = run(
-            cmd,
-            stdout=PIPE,
-            stderr=DEVNULL,
-            shell=True,
-            text=True,
-            )
-    if popen.returncode == 0:
-        return popen.stdout[:-1].split('\n')
-    else:
-        return []
-
-
-def pipes(cmd_input, cmd_output):
+def pipes(cmd_input: str, cmd_output: str) -> str:
     try:
         Input = Popen(
                 cmd_input,
@@ -51,19 +36,18 @@ def pipes(cmd_input, cmd_output):
         return ''
 
 
-def rofi(diccionario, titulo, lineas = 10, width = 25):
-    cadena = '\n'.join(diccionario.keys())
+def rofi(diccionario: dict,
+         titulo: str,
+         lineas: int = 10,
+         width: int = 25
+        ) -> str:
+
+    cadena = '\n'.join(diccionario.values())
     respuesta = pipes(
         "echo -e '{}'".format(cadena),
-        f'rofi -lines {lineas} -width {width} -location 0 -dmenu -p ' + '"' + titulo + '"'
+        f'rofi -lines {lineas} -width {width} -location 0 -dmenu -p ' +
+        '"' + titulo + '"'
         )
-    return diccionario.get(respuesta)
-
-
-def rofi_lista(lista, titulo, lineas = 10, width = 25):
-    cadena = '\n'.join(lista)
-    respuesta = pipes(
-        "echo -e '{}'".format(cadena),
-        f'rofi -lines {lineas} -width {width} -location 0 -dmenu -p ' + '"' + titulo + '"'
-        )
-    return respuesta
+    for llave, clave in diccionario.items():
+        if clave == respuesta:
+            return llave

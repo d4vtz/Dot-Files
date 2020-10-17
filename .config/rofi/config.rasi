@@ -1,3 +1,10 @@
 configuration {
-	theme: "~/.cache/wal/colors-rofi-dark.rasi";
+	/* theme: "~/.cache/wal/colors-rofi-dark.rasi"; */
+	modi: "drun";
+    	terminal: "alacritty";
+    	theme: "clean.rasi";
+    	show-icons: true;
+    	display-drun: "   ";
+    	sidebar-mode: false;
 }
+
