@@ -14,9 +14,3 @@ class Red:
 
 red = Red()
 print(red.escanaer())
-
-      
-
-
-
-

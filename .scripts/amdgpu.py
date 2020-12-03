@@ -31,7 +31,7 @@ def infogpu(gpu):
         if i < 11:
             tabla[elemento[0]] = elemento[1]
         else:
-            tabla[elemento[0]] = elemento[2] 
+            tabla[elemento[0]] = elemento[2]
         i += 1
     return tabla
 

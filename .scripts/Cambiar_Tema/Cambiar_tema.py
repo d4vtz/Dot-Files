@@ -53,9 +53,9 @@ def buscar(extensiones, ruta):
         ]
 
     ECHO = Popen(echo, stdout=PIPE)
-    ROFI = Popen(rofi, stdin=ECHO.stdout, stdout=PIPE) 
+    ROFI = Popen(rofi, stdin=ECHO.stdout, stdout=PIPE)
     ECHO.stdout.close()
-    resultado = ROFI.stdout.read().decode()[:-1] 
+    resultado = ROFI.stdout.read().decode()[:-1]
     return resultados.get(resultado)
 
 
@@ -66,7 +66,7 @@ def leer_archivo(ruta):
     for linea in archivo:
         lineas.append(linea)
     archivo.close()
-    
+
     return lineas
 
 
@@ -89,7 +89,7 @@ def editar(tema, gtk = 2):
         archivo = leer_archivo(GTKRC2)
     else:
         archivo = leer_archivo(GTKRC3)
-    
+
     remplazos = lineas_a_remplazar(tema.keys(), archivo)
 
     for linea in archivo:
@@ -132,7 +132,5 @@ if __name__ == '__main__':
         gtk3 = editar(Tema.Light, 3)
         reescribir_archivo(gtk2, GTKRC2)
         reescribir_archivo(gtk3, GTKRC3)
-    
-    Popen(['wal', '-i', wallpaper], stdout=DEVNULL)
-    
 
+    Popen(['wal', '-i', wallpaper], stdout=DEVNULL)

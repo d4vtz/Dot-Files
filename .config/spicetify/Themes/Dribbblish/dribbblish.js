@@ -48,7 +48,7 @@ waitForElement([".LeftSidebar", ".LeftSidebar__section--rootlist .SidebarList__l
 
     new MutationObserver(loadPlaylistImage)
         .observe(queries[1], {childList: true});
-    
+
     /** Replace Apps name with icons */
 
     /** List of avaiable icons to use:
@@ -96,7 +96,7 @@ waitForElement([".LeftSidebar", ".LeftSidebar__section--rootlist .SidebarList__l
                 case "playlist:local-files":    return "localfile";
                 case "stations":                return "stations";
             }})(item.href.replace("spotify:app:", ""));
-            
+
             replaceTextWithIcon(item.firstChild, icon);
         });
 

@@ -2,7 +2,7 @@
 
 An Adapta Nokto colorscheme - no CSS modification.
 
-Note that the borders present in the screenshot are a part of my window manager, and not included with the theme. 
+Note that the borders present in the screenshot are a part of my window manager, and not included with the theme.
 
 ## Screenshots
 

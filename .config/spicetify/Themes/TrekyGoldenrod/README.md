@@ -14,7 +14,7 @@
 
 ## More
 
-**Credits**: Based off the [Sweet](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Sweet) theme developed by [morpheusthewhite](https://github.com/morpheusthewhite) 
+**Credits**: Based off the [Sweet](https://github.com/morpheusthewhite/spicetify-themes/tree/master/Sweet) theme developed by [morpheusthewhite](https://github.com/morpheusthewhite)
 
 
 

@@ -16,7 +16,7 @@ Thank you for downloading Comfortaa!
 
 If you like Comfortaa and use it, you are very welcome to leave a donation!
 Making fonts is much work and even a very small amount of money will be highly appreciated,
-encouraging me to keep making fonts available free of charge.  
+encouraging me to keep making fonts available free of charge.
 To make a donation, use the link "donate" included in the comfortaa folder.
 
 (Note that it is entirely up to you if you want to leave a donation, and not doing so should by no means ethically stop you from using Comfortaa)
@@ -44,7 +44,7 @@ Comfortaa is free for personal/noncommercial use, AND commercial use.
 
 Comfortaa is licensed under the SIL Open Font License, Version 1.1.
 http://scripts.sil.org/OFL
-This is the standard license of open source fonts and has very few restrictions. Read the "OFL" file included in the Comfortaa folder for detailed information on the license.  
+This is the standard license of open source fonts and has very few restrictions. Read the "OFL" file included in the Comfortaa folder for detailed information on the license.
 
 If you still have questions or comments, you are more than welcome to write to my email: aajohan@gmail.com
 
@@ -61,7 +61,7 @@ January 2017
 - Version 3.001
 - Comfortaa has been improved as part of the Google Font Improvements Project
 - Smaller and major changes to all characters
-- Added support for Vietnamese 
+- Added support for Vietnamese
 
 8. May 2013
 - Version 2.004 2013
@@ -94,7 +94,7 @@ January 2017
 - Made changes to Fontlog.txt (Included the readme file in the fontlog file)
 
 30. November 2010
-- Corrected "cyrillic small letter yi" and "dotless i" (version 1.004 2010)  
+- Corrected "cyrillic small letter yi" and "dotless i" (version 1.004 2010)
 
 20. July 2010
 - Comfortaa released under a new license:  SIL Open Font License, Version 1.1.

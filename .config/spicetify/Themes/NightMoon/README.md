@@ -3,4 +3,3 @@
 ## Screenshots
 
 ![NightMoon](./screenshot.png)
-

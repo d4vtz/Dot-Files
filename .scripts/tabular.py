@@ -77,7 +77,7 @@ if __name__ == '__main__':
         ventana_padre = cmd_output('bspc query -N -n focused')
         ventana_hija = obtener_wid(args.DIR)
         pestañas = cmd_output('tabbed {} -d'.format(TABBED_CONFIG))
-        
+
         if obtener_clase(ventana_hija) != '':
             if pestañas != '':
                 cmd_output(f'xdotool windowreparent {ventana_hija} {pestañas}')
@@ -95,7 +95,6 @@ if __name__ == '__main__':
         lista = [obtener_clase(elemento) for elemento in lista_pestaña]
         dic = {}
         for i in range(len(lista)):
-            dic[lista[i]] = lista_pestaña[i] 
+            dic[lista[i]] = lista_pestaña[i]
         eleccion = rofi(dic, 'Pestañas')
         cmd_output(f'xdotool windowfocus {eleccion}')
-

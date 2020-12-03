@@ -1,5 +1,5 @@
 :root {
-	
+
 }
 
 /*Round corner cover image*/
@@ -307,8 +307,7 @@ span.glue-page-header__title-text {
 	padding: 2px 10px;
   }
 
-/*heart icon*/  
+/*heart icon*/
 .view-player .nowplaying-add-button{
 	color:var(--modspotify_sidebar_indicator_and_hover_button_bg) !important;
 }
-

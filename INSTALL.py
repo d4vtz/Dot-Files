@@ -41,7 +41,7 @@ if __name__ == '__main__':
     print('  ------------------------------------------------------  ')
     print('    Script de instalación de mi configuración de BSPWM    ')
     print('  ------------------------------------------------------  ')
-    print('')    
+    print('')
     print('')
 
     if not path.exists(CONFIG):

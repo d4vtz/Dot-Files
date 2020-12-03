@@ -14,4 +14,3 @@ Theme created by Greyowl
 ## Gruvbox
 
 Inspired by [gurvbox](https://github.com/morhetz/gruvbox)
-

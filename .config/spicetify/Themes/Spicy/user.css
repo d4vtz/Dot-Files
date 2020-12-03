@@ -318,7 +318,7 @@ Change text color in playlist
 
 #video-player .album-art__foreground {
 	flex-direction: row;
-	text-align: left;	
+	text-align: left;
 }
 
 #video-player .album-art__background {
@@ -679,7 +679,7 @@ body.remotebar .view-player .player-bar-wrapper {
 .view-player .player-controls-container .progress-container .elapsed {
 	position: absolute !important;
 
-	
+
 }
 .view-player .player-controls-container .progress-container .remaining {
 	margin-left: 100%;
@@ -714,7 +714,7 @@ Move progress bar to bottom of window
 
 .Button--style-green,
 .slider,
-.button.button-green, 
+.button.button-green,
 .button.button-white,
 .GlueButton.GlueButton--style-green {
 	border-radius: 4px !important;
@@ -744,14 +744,14 @@ Move progress bar to bottom of window
 
 .TableCell{
 	border-top: 0px !important
-	
+
 }
 
 .button.button-with-stroke::after,
 .button.button-icon-with-stroke::after,
 .button-play{
 	border-radius: 0px !important;
-	
+
 }
 
 
@@ -763,7 +763,7 @@ Move progress bar to bottom of window
 .card:hover:after{
 	background: var(--modspotify_miscellaneous_hover_bg) !important;
 	border-radius: 4px !important;
-	box-shadow: inset 0 0 0 1px transparent !important; 
+	box-shadow: inset 0 0 0 1px transparent !important;
 }
 
 .card:hover:after{
@@ -780,7 +780,7 @@ Move progress bar to bottom of window
 .button.button-with-stroke::after,
 .button.button-icon-with-stroke::after,
 .Button--style-icon-stroke:after{
-	box-shadow: inset 0 0 0 1px transparent !important; 
+	box-shadow: inset 0 0 0 1px transparent !important;
 }
 
 
@@ -883,7 +883,7 @@ Move progress bar to bottom of window
 .Card__image-hit-area:not(.no-hover):hover .card-button-add,
 .Card__image-hit-area:not(.no-hover):hover .card-button-play,
 .Card__image-hit-area:not(.no-hover):hover .card-button-more,
-.card-image-hit-area:not(.no-hover):hover .card-image-content-wrapper, 
+.card-image-hit-area:not(.no-hover):hover .card-image-content-wrapper,
 .card-image-content-wrapper,
 .Card:not(.Card--artist) .Card__image-hit-area-counter-scale:hover .Card__image-wrapper{
 	transform: unset !important;
@@ -895,7 +895,7 @@ Move progress bar to bottom of window
 	transition-property: all !important;
     transition-duration: 1s !important;
     transition-timing-function: cubic-bezier(.3,0,0,1) !important;
-    opacity: 1 !important; 
+    opacity: 1 !important;
 }
 
 
@@ -922,8 +922,8 @@ Move progress bar to bottom of window
 .card-type-collection-artist .card-overlay,
 .card-type-collection-artist .card-placeholder-wrapper,
 .card-type-collection-artist .card-image-link,
-.card-type-collection-artist .card-hit-area-counter-scale, 
-.card-type-user .card-image, 
+.card-type-collection-artist .card-hit-area-counter-scale,
+.card-type-user .card-image,
 .card-type-user .card-image-hit-area,
 .card-type-user .card-overlay,
 .card-type-user .card-placeholder-wrapper,

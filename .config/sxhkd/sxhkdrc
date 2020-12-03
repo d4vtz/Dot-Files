@@ -21,7 +21,7 @@ super + alt + r
 
 #Navegador
 alt + w
-    google-chrome-stable
+    chromium
 
 #Terminal
 super + Return
@@ -54,14 +54,14 @@ alt + p
 #Ocultar Telegram
 alt + t
     ~/.scripts/ocultar_ventana TelegramDesktop telegram-desktop
-    
+
 #Spotify
 alt + s
     ~/.scripts/spotify.py
 
 #Cambiar el wallpaper y colores de la paleta
 super + Home
-    ~/.scripts/Temas/cambiar_tema.py 
+    ~/.scripts/Temas/cambiar_tema.py
 
 #Menu para cerrar sesión, reiniciar, bloquear, apagar
 super + End
@@ -119,7 +119,7 @@ super + Tab
 super + {_,shift + }{1-8}
     bspc {desktop -f,node -d} '^{1-9,10}' --follow
 
-#Cambiar el tamaño de las gaps 
+#Cambiar el tamaño de las gaps
 super + z + {Up,Down}
     bspc config window_gap $(( $(bspc config window_gap) {-,+} 5 ))
 
@@ -144,7 +144,7 @@ super + alt + ctrl + {Left,Down,Up,Right}
 ctrl + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
-#Dirección de preselección 
+#Dirección de preselección
 super + ctrl + {Left,Down,Up,Right}
     bspc node -p {west,south,north,east}
 
@@ -159,23 +159,23 @@ ctrl + Return
 #Rotar arbol de ventanas
 super + shift + {Prior,Next}
     bspc node @/ -C {forward,backward}
-    
+
 #################################################################
 #############			Teclas multimedia		#################
 #################################################################
 
 #Subir Volumen
 XF86AudioRaiseVolume
-    ~/.scripts/pulseaudio.py -Subir ; tail -f /tmp/xobpipe | xob  
+    ~/.scripts/pulseaudio.py -Subir ; tail -f /tmp/xobpipe | xob
 
 #Bajar volumen
 XF86AudioLowerVolume
-    ~/.scripts/pulseaudio.py -Bajar ; tail -f /tmp/xobpipe | xob 
+    ~/.scripts/pulseaudio.py -Bajar ; tail -f /tmp/xobpipe | xob
 
 #Mute
 XF86AudioMute
-    ~/.scripts/pulseaudio.py -Silencio ; tail -f /tmp/xobpipe | xob  
-    
+    ~/.scripts/pulseaudio.py -Silencio ; tail -f /tmp/xobpipe | xob
+
 #Screenshot
 Print + {_, super}
     ~/.scripts/screen.sh {-screen, -retraso}

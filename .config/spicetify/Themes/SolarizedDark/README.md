@@ -6,4 +6,3 @@
 
 ## Credits
 Original colorscheme by [Ethan Schnoover](https://ethanschoonover.com/solarized)
-

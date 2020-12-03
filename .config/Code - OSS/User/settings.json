@@ -1,7 +1,6 @@
 {
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Monokai Neon",
     "editor.fontFamily": "'Iosevka Nerd Font'",
     "editor.fontSize": 12,
     "python.envFile": ".env",
@@ -33,7 +32,7 @@
     ],
 
     "latex-workshop.latex.tools": [
-        
+
 
         {
             "name": "pdflatex",
@@ -93,7 +92,9 @@
         "xwininfo"
     ],
     "window.zoomLevel": 0,
-    "workbench.iconTheme": "material-icon-theme",
     "python.linting.pycodestyleEnabled": true,
     "python.linting.enabled": true,
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
 }

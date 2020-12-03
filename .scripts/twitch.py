@@ -3,7 +3,7 @@
 from subprocess import PIPE, Popen
 from sys import argv
 
-CANAL = 'https://twitch.tv/' + argv[1] 
+CANAL = 'https://twitch.tv/' + argv[1]
 CALIDAD = 'best'
 
 streamlink = [

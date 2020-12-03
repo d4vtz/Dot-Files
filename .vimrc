@@ -32,7 +32,7 @@ call plug#end()
     set showcmd
     set showmatch
     set laststatus=2
-    
+
     colorscheme wal
     "let g:gruvbox_contrast_dark="hard"
     let g:airline#extensions#tabline#enabled = 1
@@ -46,4 +46,3 @@ call plug#end()
     nmap <C-n> :NERDTreeToggle<CR>
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     let NERDTreeQuitOnOpen=1
-

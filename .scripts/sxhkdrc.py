@@ -31,12 +31,12 @@ def contenido(ruta):
             comentarios.append(item[1:])
         else:
             atajos.append(ajustar(item))
-    
+
     if len(atajos) == len(comentarios):
         cadena = ''
         for i in range(0, len(atajos)):
             cadena += atajos[i] + '\t\t' + comentarios[i] + '\n'
-    
+
     return cadena
 
 d = contenido(SXHKDRC)

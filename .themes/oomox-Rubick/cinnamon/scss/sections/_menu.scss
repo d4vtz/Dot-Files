@@ -110,7 +110,7 @@
     border-color: $interior_border;
     &.vfade {
         -st-vfade-offset: 136px;
-    }   
+    }
 }
 .menu-favorites-button {
     @extend %menu-buttons-shared;

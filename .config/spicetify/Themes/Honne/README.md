@@ -1,6 +1,6 @@
-# Honne 
+# Honne
 
-## Screenshot 
+## Screenshot
 
 ![](https://raw.githubusercontent.com/twoswordsman/spicetify-themes/master/HONNE/honneimg.png)
 

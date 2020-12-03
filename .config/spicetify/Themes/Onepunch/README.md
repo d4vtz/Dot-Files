@@ -17,8 +17,8 @@ Wondering what is changed, then check this [file](./changelog.md).
 
 #### Contact
 
-Click **[here](https://t.me/saitama_a)** for *feedback*, *sharing new ideas* and *reporting bugs* only.  
-Format for bug reporting:  
+Click **[here](https://t.me/saitama_a)** for *feedback*, *sharing new ideas* and *reporting bugs* only.
+Format for bug reporting:
 
      Operating System(!important):
 

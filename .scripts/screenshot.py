@@ -17,7 +17,7 @@ RETRASO = 5
 
 def nombre_imagen():
     date = str(datetime.datetime.now()).split()
-    FECHA = date[0]        
+    FECHA = date[0]
     HORA = date [1][:-7]
     return 'screen-'+ HORA + '-' + FECHA + '.png'
 
@@ -25,7 +25,7 @@ def nombre_imagen():
 def screen():
     nombre = nombre_imagen()
     origen = os.getcwd() + '/' + nombre
-    
+
     Screenshot = ImageGrab.grab()
     Screenshot.save(nombre)
     move(origen, DESTINO)

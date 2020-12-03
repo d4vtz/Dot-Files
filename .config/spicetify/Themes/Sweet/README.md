@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-Window: 
+Window:
 
 ![Sweet](/Sweet/screenshot.png?raw=true)
 

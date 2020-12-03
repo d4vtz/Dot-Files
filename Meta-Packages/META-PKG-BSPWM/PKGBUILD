@@ -4,7 +4,7 @@ pkgname=Meta-pkg-bspwm
 pkgver=2020.08.29
 pkgrel=1.0
 pkgdesc='Meta-package para la instalación de mi setup de BSPWM'
-arch=('any') 
+arch=('any')
 license=('none')
 depends=(
     'alacritty',

@@ -9,11 +9,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 body {
 	font-family:Josefin Sans;
-	font-weight:Normal;	
+	font-weight:Normal;
 }
 
 /** {
-	font-family:Google Sans;	
+	font-family:Google Sans;
 }*/
 /*Round corner cover image*/
 .card-image,
@@ -365,7 +365,7 @@ Change text color in playlist
 
 #video-player .album-art__foreground {
 	flex-direction: row;
-	text-align: left;	
+	text-align: left;
 }
 
 #video-player .album-art__background {

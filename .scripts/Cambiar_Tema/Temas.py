@@ -11,4 +11,3 @@ Light = {
     'gtk-font-name'         : 'Cantarell 11',
     'gtk-cursor-theme-name' : 'Qogir-dark'
 }
-

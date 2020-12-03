@@ -28,11 +28,11 @@ class Clip_Manager:
         clipboard.copy(eleccion)
 
     def escritura(self, clip):
-        
+
         self.clips.reverse()
         self.clips.append(clip)
         self.clips.reverse()
-        
+
         with open(HISTORIAL, 'w') as historial:
             for clip in self.clips:
                 if len(clip) > 0:
@@ -44,21 +44,21 @@ class Clip_Manager:
             clips_historial = self.lectura()
 
             if CLIPS_MAX >= len(clips_historial) > 0:
-                self.clips = clips_historial            
+                self.clips = clips_historial
             elif len(clips_historial) > CLIPS_MAX:
                 self.clips = clips_historial[:CLIPS_MAX]
 
             clip = clipboard.paste()
-            
+
             if not clip in self.clips and len(clip) < CLIP_LONG_MAX:
                 self.escritura(clip)
             self.clips = []
 
 
 if __name__ == '__main__':
-    
+
     clip = Clip_Manager()
-    
+
     if argv[1] == '-Demonio':
         clip.demonio()
     elif argv[1] == '-Copiar':

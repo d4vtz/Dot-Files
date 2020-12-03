@@ -5,13 +5,13 @@ CLASE = 'Spotify'
 
 def id_ventana():
     try:
-        ventana = run(  
+        ventana = run(
             'xdo id -N '+CLASE+' || xdo id -n '+CLASE,
             check=True,
             shell=True,
             stdout=PIPE,
             stderr=DEVNULL
-        ) 
+        )
         return str(ventana.stdout)[2:-3].split('\\n')
     except:
         return None

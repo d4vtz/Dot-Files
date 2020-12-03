@@ -22,7 +22,7 @@ target="_blank"><br><img width="100" src="https://emojipedia-us.s3.dualstack.us-
 ![No Sleep](https://github.com/3raxton/NoSleep/blob/master/NoSleep/NS2.png?raw=true)
 
 ## Ideas
-Want to add something that's missing to the theme or have an idea? <a href="https://github.com/3raxton/NoSleep/issues"  target="_blank">Open an issue</a> and let me know! 
+Want to add something that's missing to the theme or have an idea? <a href="https://github.com/3raxton/NoSleep/issues"  target="_blank">Open an issue</a> and let me know!
 * I'm open to anything you can imagine. <a href="https://twitter.com/3raxton/"  target="_blank">Let me hear it!</a>
 
 ## Support
@@ -30,7 +30,7 @@ Want to add something that's missing to the theme or have an idea? <a href="http
 Support [me on Patreon](https://patreon.com/3raxton) **to help the development of the NoSleep theme stay strong**. I create &amp; work on open source projects such as the NoSleep theme for free. If you or your company depend on this project, it makes sense to donate in order to help ensure that the project is maintained.
 
 ## License
-Licensed under the [MIT License](https://3raxton.github.io/license) by [Braxton Huff](https://github.com/3raxton) 
+Licensed under the [MIT License](https://3raxton.github.io/license) by [Braxton Huff](https://github.com/3raxton)
 
 ### **If there is any other problem, please refer to the <a href="hhttps://github.com/khanhas/spicetify-cli/wiki"  target="_blank">spicetify-cli wiki</a> to help troubleshoot your problem.**
 

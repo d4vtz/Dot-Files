@@ -1,7 +1,7 @@
 #!/bin/env python
 from os import kill
 from signal import SIGTERM
-from subprocess import PIPE, Popen 
+from subprocess import PIPE, Popen
 from sys import argv
 
 PROCESO = 'screenkey'

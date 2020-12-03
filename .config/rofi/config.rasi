@@ -7,4 +7,3 @@ configuration {
     	display-drun: "   ";
     	sidebar-mode: false;
 }
-

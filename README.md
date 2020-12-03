@@ -16,7 +16,7 @@ Aquí dejo algunos detalles sobre mi configuración:
 + **OS**: [Arch Linux](https://www.archlinux.org/)
 + **WM**: [BSPWM](https://github.com/baskerville/bspwm)
 + **Hotkey Daemon**: [Sxhkd](https://github.com/baskerville/sxhkd)
-+ **Compositor**: [Picom-ibhagwan](https://github.com/ibhagwan/picom) 
++ **Compositor**: [Picom-ibhagwan](https://github.com/ibhagwan/picom)
 + **Shell**: [zsh](https://wiki.archlinux.org/index.php/Zsh)
 + **Terminal**: [Termite](https://github.com/thestinger/termite)
 + **Editor**: [Vim](https://www.vim.org/)
@@ -50,9 +50,9 @@ Aquí dejo las instrucciones que debe seguir para obtener mi configuración.
 
 
 
-2. Dependencias: 
+2. Dependencias:
 
-      Esta es una lista de las dependencias necesarias para que mi configuración de BSPWM funcione correctamente. Si los instala todos, tendrá una experiencia (en su      mayoría) sin complicaciones. 
+      Esta es una lista de las dependencias necesarias para que mi configuración de BSPWM funcione correctamente. Si los instala todos, tendrá una experiencia (en su      mayoría) sin complicaciones.
 
       | Dependencia | Descripción | ¿Porque se necesita? |
       | --- | --- | --- |
@@ -89,7 +89,7 @@ Aquí dejo las instrucciones que debe seguir para obtener mi configuración.
       ```shell
       git clone https://github.com/ibhagwan/picom-ibhagwan-git
        makepkg -si
-      ``` 
+      ```
 
     - **Para otras distribuciones**
 
@@ -100,18 +100,18 @@ Aquí dejo las instrucciones que debe seguir para obtener mi configuración.
 
    Necesita instalar algunas fuentes de texto para poder visualizar correctamente algunos iconos de polybar y de la terminal.
    Estas fuentes se encuentran en mis dotfiles.
-   
+
    Fuentes:
-   + **Iosevka Nerd Font** 
-   + **Comfortaa Regular** 
+   + **Iosevka Nerd Font**
+   + **Comfortaa Regular**
    + **Hack Regular Nerd Font**
-   
+
    Fuentes Opcionales:
    + **San Francisco Display**
 
    Para instalarlas solo basta con moverlas a `~/.fonts` o `~/.local/share/fonts`.
    - Debera crear el directorio en caso de no existir.
-   
+
    Finalmente, ejecute el siguente comando para que su sistema detecte las fuentes instaladas.
    ```shell
    fc-cache -v
@@ -137,13 +137,13 @@ Aquí dejo las instrucciones que debe seguir para obtener mi configuración.
       En este archivo se encuentran todas losa configuraciones sobre el comportamiento de las ventanas, apicaciones de inicio, espacios de trabajo, etc
 
 
- 
+
    + **Configurar SXHKD**
 
       El archivo de configuraciones de SXHKD se encuentra como  `~/.config/sxhkd/sxhkdrc`. Dentro de este archivo van todos los shortcuts configurados, como el lanzador de rofi, la terminal, portapapeles, cerrar sesión, etc. Ver [Shortcuts](#Shortcuts) para más detalles.
 
 
-   
+
    + **Configurar PICOM**
 
       El archivo de configuraciones de PICOM se encuentra como  `~/.config/picom/picom.conf`. En este archivo van todas las configuraciones del compositor, como la transparencia, el desenfoque, esquinas redondeadas, sombras, etc.
@@ -176,7 +176,7 @@ Aquí dejo las instrucciones que debe seguir para obtener mi configuración.
       ```
 
       Observaciones:
-      
+
       - Todos mi temas de mi BSPWM toman los colores de `xrdb`. Esto va bien con el uso de  [pywal](https://github.com/dylanaraps/pywal).
 
       Yo utilizo `pywal` para generar mis esquemas de colores de acuerdo a mi wallpaper, por lo cual solo se necesita ejecutar el siguente comando para generar los esquemas de colores y fija el wallpaper.
@@ -186,15 +186,15 @@ Aquí dejo las instrucciones que debe seguir para obtener mi configuración.
       ```
 
    **Temas de iconos y ventanas**
-      
+
       Iconos:
       + **[Tela](https://github.com/vinceliuice/Tela-icon-theme)** (Tela Manjaro)
-      + **[Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)** (ePapirus) 
-      
+      + **[Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)** (ePapirus)
+
       Temas:
       + **[Tarde de olas](https://github.com/medicendav/Dotfiles/tree/master/.themes/tarde-de-olas)** (Tema creado con Oomox)
       + **[Adapta](https://github.com/adapta-project/adapta-gtk-theme)** (Adapta-Nokto)
-      
+
 
 7. Inicie sesión con BSPWM.
 
@@ -238,6 +238,5 @@ Y mucho más, ver archivo `~/.config/sxhkd/sxhkdrc`.*
 ### Disfruta en mundo de los Tiling Window Manager
 Si disfrutas mis temas y te gustaría mostrar tu agradecimiento, puedesinvitarme un cafe.
 
-¡Gracias desde el fondo de mi corazón! 
+¡Gracias desde el fondo de mi corazón!
 - [**PayPal**](paypal.me/medicenDav)
-

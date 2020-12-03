@@ -355,7 +355,7 @@ Change text color in playlist
 
 #video-player .album-art__foreground {
 	flex-direction: row;
-	text-align: left;	
+	text-align: left;
 }
 
 #video-player .album-art__background {

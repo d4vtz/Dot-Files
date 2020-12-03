@@ -107,14 +107,14 @@ body.remotebar .view-player .player-bar-wrapper {
 	background-color: rgba(var(--modspotify_rgb_scrollbar_fg_and_selected_row_bg), 0.5) !important;
 }
 
-#view-player {                       
+#view-player {
 	position: absolute !important;
 	width:100% !important;
 	margin-top:28px !important;
-	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5) !important; 
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5) !important;
 	height:42px !important;
 
-	
+
 }
 .view-player .player-bar-wrapper{
 	max-height:40px;
@@ -122,7 +122,7 @@ body.remotebar .view-player .player-bar-wrapper {
 	margin-top:-0.6px !important;
 	background-color:#404040;
 	-webkit-app-region: no-drag !important;
-	
+
 
 }
 .view-player{
@@ -136,7 +136,7 @@ border-top: none !important;
 .view-player .now-playing .cover-image-container {
 	height: 100% !important;
 	overflow: visible !important;
-	
+
 }
 
 
@@ -269,7 +269,7 @@ border-top: none !important;
 
 .view-player .player-controls-container .progress-container .progress-bar {
 	margin-top: -8px !important;
-	
+
 }
 
 .view-player .player-controls-container .progress-container .progress-bar .inner {
@@ -589,7 +589,7 @@ opacity :0;
 	color: var(--modspotify_main_bg) !important;
 }
 
-.Header--with-active-sticky-header .Header__background{height:20px!important;} 
+.Header--with-active-sticky-header .Header__background{height:20px!important;}
 .Header--with-active-sticky-header .Header__sticky{margin-top:30px!important;}
 
 .content-top-bar{
@@ -599,7 +599,7 @@ opacity :0;
 	-webkit-app-region: no-drag !important;
 }
 
-			
+
 .content-top-bar .content-top-bar__history-navigation{
 	position:relative;
 	left:54% !important;
@@ -608,7 +608,7 @@ opacity :0;
 }
 
 .content-top-bar:hover .content-top-bar__history-navigation{
-	
+
 	opacity: 1;;
 }
 
@@ -620,7 +620,7 @@ opacity :0;
 }
 
 .content-top-bar:hover .content-top-bar__search-input{
-	
+
 	opacity: 1;;
 }
 
@@ -641,7 +641,7 @@ opacity :1;
 		margin-left:-40px !important;
 	margin-top: 20px !important;
 			}
-			
+
 				#player-button-play{
 					-webkit-transform: scale(1.2, 1.2);
 					top:8px !important;
@@ -652,16 +652,16 @@ opacity :1;
 #player-button-previous{
 				position:fixed	 !important;
 				left:43% !important;
-				top:18px !important; 
+				top:18px !important;
 				-webkit-transform: scale(1.6, 1.6);
-					
+
 			}
 			.skip-button-container{
 				position:fixed !important;
 				left:53.4% !important;
-				top:18px !important; 
+				top:18px !important;
 				-webkit-transform: scale(1.6, 1.6);
-				
+
 			}
 
 
@@ -672,15 +672,15 @@ opacity :1;
 
 	position:fixed !important;
 				left:38% !important;
-				top:14px !important; 
-				
+				top:14px !important;
+
 }
 
 #player-button-repeat{
 
 	position:fixed !important;
 				left:58% !important;
-				top:14px !important; 
+				top:14px !important;
 }
 
 
@@ -698,8 +698,8 @@ opacity :1;
 
 			.view-player .artist{
 				font-size:13px;
-				
-		
+
+
 			}
 			.view-player .text-container .text-item-container-artists
 			{
@@ -710,8 +710,8 @@ opacity :1;
 			.tl-header th, .tl-cell{border-top:1px solid #2c2c2c !important;}
 			.tracklist-album, .tracklist-chart, .tracklist-basic, .tracklist-playlist, .tracklist-podcast, .tracklist-popular, .tracklist-station, .tracklist-queue, .tracklist-search{
 			border-bottom:1px solid #2c2c2c;
-			
-				
+
+
 			}
 			.view-player .extra-controls-container .volumebar-container .progress-bar-wrapper, .view-player .extra-controls-container .volumebar-container .volumebar{
 				width:100%
@@ -724,7 +724,5 @@ opacity :1;
 
 			.ConnectPopup__devices-image{
 -webkit-app-region: drag !important;
-				
-			}
 
-			
+			}

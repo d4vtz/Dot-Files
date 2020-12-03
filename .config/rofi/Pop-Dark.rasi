@@ -7,8 +7,8 @@ theme: "~/.cache/wal/colors-rofi-dark.rasi";
     background-color:            #4e4743;
     lightbg:                     #534c48;
     red:                         #f15d22;
-    orange:                      #faa41a; 
-    blue:                        #48b9c7; 
+    orange:                      #faa41a;
+    blue:                        #48b9c7;
 
     selected-normal-foreground:  @foreground;
     normal-foreground:           @foreground;

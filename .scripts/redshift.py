@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from os import kill, environ
 from signal import SIGTERM
-from subprocess import DEVNULL, PIPE, Popen 
+from subprocess import DEVNULL, PIPE, Popen
 from sys import argv
 from time import sleep
 
@@ -13,7 +13,7 @@ def hay_proceso(nombre):
     grep = Popen(['grep', nombre], stdin=ps.stdout, stdout=PIPE)
     ps.stdout.close()
     return grep.stdout.read().decode()
-    
+
 
 if __name__ == '__main__':
     if len(argv) >= 2:
@@ -25,10 +25,9 @@ if __name__ == '__main__':
                 kill(int(pid), SIGTERM)
         else:
             Popen(PROCESO, stdin=DEVNULL)
-        
+
     else:
         if hay_proceso(PROCESO):
             print('盛     ')
         else:
             print('盛     ')
-

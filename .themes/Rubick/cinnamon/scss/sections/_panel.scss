@@ -88,7 +88,7 @@
         }
     }
     .grouped-window-list-item-box {
-        &:active, &:checked {      
+        &:active, &:checked {
           box-shadow: 0 2px 0 0 $dark_fg_color inset;
           }
         &:hover {
@@ -128,7 +128,7 @@
         }
     }
     .grouped-window-list-item-box {
-        &:active, &:checked {      
+        &:active, &:checked {
           box-shadow: 0 -2px 0 0 $dark_fg_color inset;
           }
         &:hover {
@@ -168,7 +168,7 @@
         }
     }
     .grouped-window-list-item-box {
-        &:active, &:checked {      
+        &:active, &:checked {
           box-shadow: 2px 0 0 0 $dark_fg_color inset;
           }
         &:hover {
@@ -208,7 +208,7 @@
         }
     }
      .grouped-window-list-item-box {
-        &:active, &:checked {      
+        &:active, &:checked {
           box-shadow: -2px 0 0 0 $dark_fg_color inset;
           }
         &:hover {
@@ -396,7 +396,7 @@
     }
     &-badge {
         border-radius: 256px;
-        background-color: $dark_bg_color; 
+        background-color: $dark_bg_color;
     }
     &-thumbnail-alert {
         background: $warning_color;
@@ -456,7 +456,7 @@
 .sound-player {
     StButton {
         @extend %shared-button;
-        
+
         min-width: 2em;
         min-height: 2em;
         padding: $spacing_plus2;
@@ -570,4 +570,3 @@
 .flashspot {
     background-color: $selected_bg_color;
 }
-

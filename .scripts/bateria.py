@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import notify2
-from time import sleep
 from wmutils.procesos import cmd_output
 
 
@@ -16,7 +15,6 @@ def notificar():
         wn.set_urgency(notify2.URGENCY_CRITICAL)
         wn.set_timeout(time_out)
         wn.show()
-        sleep(10)
     except Exception as error:
         pass
 
@@ -25,9 +23,9 @@ class Bateria:
 
     def __init__(self):
         estado = cmd_output('acpi -V').split('\n')
-        self.carga = int(estado[0].split()[3][:-2])
+        self.carga = int(estado[0].split()[3][:-1][:-1])
         self.conectada = estado[2].split()[2] == 'on-line'
-        self.completa = self.carga >= 99
+        self.completa = estado[2].split()[2] == 'Full'
 
     def estado_critico(self):
         return self.carga < 30
@@ -55,7 +53,7 @@ if __name__ == '__main__':
         print(f'   {bateria.carga}%')
 
     elif bateria.completa:
-        print('   Carga completa')
+        print('Carga completa')
 
     else:
         if bateria.estado_critico():
